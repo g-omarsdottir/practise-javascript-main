@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game On!</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="centered">
+      <h1>Rock Paper Scissors Lizard Spock</h1>
+    </header>
+    <div id="game-area" class="centered">
+      <button class="start-button">Start Game <i class="fa-regular fa-circle-play"></i></button>
+
+      <div class="container centered">
+        <button onclick="playGame()" id="rock" class="choice-button">Rock  <i class="fa-regular fa-hand-back-fist"></i></button>
+
+        <button onclick="playGame()" id="paper" class="choice-button">Paper  <i class="fa-regular fa-hand"></i></button>
+
+        <button onclick="playGame()" id="scissors" class="choice-button">Scissors  <i class="fa-regular fa-hand-scissors"></i></button>
+
+        <button onclick="playGame()" id="lizard" class="choice-button">Lizard  <i class="fa-regular fa-hand-lizard"></i></button>
+
+        <button onclick="playGame()" id="spock" class="choice-button">Spock <i class="fa-regular fa-hand-spock"></i></button>
+      </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/c62380739e.js" crossorigin="anonymous"></script>
+  </body>
+</html>

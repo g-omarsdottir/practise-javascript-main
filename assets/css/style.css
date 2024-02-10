@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#game-area {
+background-color: lightyellow;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.start-button {
+    font-size: 2rem;
+    padding: 2rem;
+    margin: 1rem auto;
+    width: 60%;
+    background-color: lightgreen;
+  }
+
+  /* unused class: container */
+
+.choice-button {
+  width: 30%;
+  padding: 2rem;
+  margin: 0.5rem auto;
+  font-size: 1.5rem;
+}
+
+
