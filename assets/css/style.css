@@ -3,9 +3,26 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#game-area {
-background-color: lightyellow;
+/* Header */
+
+/* Navigation Menu */
+header a {
+  text-decoration: none;
+  margin-right: 40px;
 }
+
+.current-page {
+  border-bottom: 1px solid #3a3a3a;
+}
+
+#navbar {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* General styles */
 
 .centered {
     display: flex;
@@ -13,6 +30,27 @@ background-color: lightyellow;
     justify-content: center;
     text-align: center;
 }
+
+/* Start Screen */
+
+#list-rules>li {
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 42%;
+}
+
+.play-button {
+  width: 30%;
+  padding: 2rem;
+  margin: 0.5rem auto;
+  font-size: 1.5rem;
+}
+
+.play-button a {
+  text-decoration: none;
+}
+
+/* Play Game */
 
 .start-button {
     font-size: 2rem;
@@ -31,4 +69,14 @@ background-color: lightyellow;
   font-size: 1.5rem;
 }
 
+#game-area {
+  background-color: lightyellow;
+  }
 
+/* End Screen */
+.return-button {
+  width: 30%;
+  padding: 2rem;
+  margin: 0.5rem auto;
+  font-size: 1.5rem;
+}
