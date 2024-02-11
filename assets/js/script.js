@@ -17,7 +17,7 @@ function computerChoice() {
 }
 
 console.log(computerChoice());
-
+//https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener?retiredLocale=de
 function userChoice() {
     rock.addEventListener("click", function () {
         userChoice("rock");
@@ -99,3 +99,6 @@ function playGame() {
     console.log("testing spock");
   }
 }
+
+
+// id="username" for local storage

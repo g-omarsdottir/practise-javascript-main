@@ -50,6 +50,12 @@ header a {
   text-decoration: none;
 }
 
+.enter-game-buttons {
+  padding: 20px;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
 /* Play Game */
 
 .start-button {

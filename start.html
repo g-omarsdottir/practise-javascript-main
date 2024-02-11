@@ -36,10 +36,14 @@
       <li>Spock vaporizes Rock</li>
       <li>(and as it always has) Rock crushes Scissors</li>
     </ul>
-    <div>
-      <p>Enter Username</p>
-      <button class="play-button"><a href="index.html">Take me to the arena,<br> I am ready to play!</a></button>
+    <div class="centered">
+      <form action="index.html" method="GET">
+      <label for="username" class="enter-game-buttons">Username: </label>
+      <input type="text" placeholder="Enter Username" name="username" id="username" class="enter-game-buttons" required>
+      <input type="submit" class="enter-game-buttons" value="Submit username and let the games begin!">
     </div>
+  </form>
+</div>
   </div>
   </body>
 </html>
