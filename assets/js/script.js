@@ -1,11 +1,15 @@
 //let message = "";
 //let screenMessage = document.getElementById("screen-message")
+//https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener?retiredLocale=de
+//https://www.w3schools.com/js/js_htmldom_eventlistener.asp
 
-//const winMessage = "You win! Yay!";
-//const tieMessage = "It's a tie! Everybody wins!";
-//const loseMessage = "Yaiks, that plan backfired! Better luck next time!";
+// Following 3 const are more for practise:
+const winMessage = "You win! Yay!";
+const tieMessage = "It's a tie! Everybody wins!";
+const loseMessage = "Yaiks, that plan backfired! Better luck next time!";
 
-const choices = ["Rock", "Scissors", "Paper", "Lizard", "Spock"];
+const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+// following const are for add.Event.Listener("click")
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
@@ -17,89 +21,97 @@ function computerChoice() {
 }
 
 console.log(computerChoice());
-//https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener?retiredLocale=de
-//https://www.w3schools.com/js/js_htmldom_eventlistener.asp
-function userChoice() {
-    rock.addEventListener("click", function () {
-        userChoice("rock");
-      });
-    
-      paper.addEventListener("click", function () {
-        userChoice("paper");
-      });
-    
-      scissors.addEventListener("click", function () {
-        userChoice("scissors");
-      });
-    
-      lizard.addEventListener("click", function () {
-        userChoice("lizard");
-      });
-    
-      spock.addEventListener("click", function () {
-        userChoice("spock");
-      });
+
+function userChoice(getUserChoice) {
+  //Should I add const getComputerChoice = computerChoice() ?
+  console.log("You chose " + getUserChoice);
+  console.log("Computer chose " + computerChoice());
 }
 
-console.log(userChoice());
+function clickingButtons() {
+  rock.addEventListener("click", function () {
+    userChoice(choices[0]);
+  });
+
+  paper.addEventListener("click", function () {
+    userChoice(choices[1]);
+  });
+
+  scissors.addEventListener("click", function () {
+    userChoice(choices[2]);
+  });
+
+  lizard.addEventListener("click", function () {
+    userChoice(choices[3]);
+  });
+
+  spock.addEventListener("click", function () {
+    userChoice(choices[4]);
+  });
+}
+
+clickingButtons();
+
+// substitute console.log(winMessage, tieMessage, loseMessage) with function to increment and keep score later.
 
 function playGame() {
-  
+  // Do I use "Rock", as in an item from the array choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"], or
+  // do I use rock, as in the const rock = document.getElementById("rock")
+  // for this function?
   if (
-    userChoice == "rock" &&
-    (computerChoice == "scissors" || computerChoice == "lizard")
-  ) 
-    console.log("You win! Yay!");
-   else if (computerChoice == "Rock") {
-    console.log("It's a tie! Everybody wins!");
+    userChoice == rock &&
+    (computerChoice == scissors || computerChoice == lizard)
+  )
+    console.log(winMessage);
+  else if (computerChoice == rock) {
+    console.log(tieMessage);
   } else {
-    console.log("Yaiks, that plan backfired! Better luck next time!");
+    console.log(loseMessage);
   }
 
   if (
     userChoice == "Paper" &&
     (computerChoice == "Rock" || computerChoice == "Spock")
   ) {
-    console.log("winMessage");
+    console.log(winMessage);
   } else if (computerChoice == "Paper") {
-    console.log("tieMessage");
+    console.log(tieMessage);
   } else {
-    console.log("testing paper");
+    console.log(loseMessage);
   }
 
   if (
     userChoice == "Scissors" &&
-    (computerChoice == "Paper" || computerChoice == Lizard)
+    (computerChoice == "Paper" || computerChoice == "Lizard")
   ) {
-    console.log("winMessage");
+    console.log(winMessage);
   } else if (computerChoice == "Scissors") {
-    console.log("tieMessage");
+    console.log(tieMessage);
   } else {
-    console.log("testing scissors");
+    console.log(loseMessage);
   }
 
   if (
     userChoice == "Lizard" &&
     (computerChoice == "Paper" || computerChoice == "Spock")
   ) {
-    console.log("winMessage");
+    console.log(winMessage);
   } else if (computerChoice == "Lizard") {
-    console.log("tieMessage");
+    console.log(tieMessage);
   } else {
-    console.log("testing lizard");
+    console.log(loseMessage);
   }
 
   if (
     userChoice == "Spock" &&
     (computerChoice == "Rock" || computerChoice == "Scissors")
   ) {
-    console.log("winMessage");
+    console.log(winMessage);
   } else if (computerChoice == "Spock") {
-    console.log("tieMessage");
+    console.log(tieMessage);
   } else {
-    console.log("testing spock");
+    console.log(loseMessage);
   }
 }
 
-
-// id="username" for local storage
+playGame();
