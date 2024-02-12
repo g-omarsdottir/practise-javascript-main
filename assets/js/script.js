@@ -78,17 +78,17 @@ function playGame(userChoice, computerChoice) {
     }
 
     if (
-      userChoice == "Paper" &&
-      (computerChoice == "Rock" || computerChoice == "Spock")
+      userChoice == paper &&
+      (computerChoice == rock || computerChoice == spock)
     ) {
       console.log(winMessage);
     }
-    if (userChoice == "Paper" && computerChoice == "Paper") {
+    if (userChoice == paper && computerChoice == paper) {
       console.log(tieMessage);
     }
     if (
-      userChoice == "Paper" &&
-      (computerChoice == "Scissors" || computerChoice == "Lizard")
+      userChoice == paper &&
+      (computerChoice == scissors || computerChoice == lizard)
     ) {
       console.log(loseMessage);
     }
