@@ -19,66 +19,55 @@ const scissors = document.getElementById("scissors");
 const lizard = document.getElementById("lizard");
 const spock = document.getElementById("spock");
 
-function generateUserChoice() {
-  rock.addEventListener("click", function () {
-    playGame(choices[0]);
-  });
+rock.addEventListener("click", function () {
+  chooseOption(choices[0]);
+});
 
-  paper.addEventListener("click", function () {
-    playGame(choices[1]);
-  });
+paper.addEventListener("click", function () {
+  chooseOption(choices[1]);
+});
 
-  scissors.addEventListener("click", function () {
-    playGame(choices[2]);
-  });
+scissors.addEventListener("click", function () {
+  chooseOption(choices[2]);
+});
 
-  lizard.addEventListener("click", function () {
-    playGame(choices[3]);
-  });
+lizard.addEventListener("click", function () {
+  chooseOption(choices[3]);
+});
 
-  spock.addEventListener("click", function () {
-    playGame(choices[4]);
-  });
+spock.addEventListener("click", function () {
+  chooseOption(choices[4]);
+});
+
+// Feedback to user while playing. To-do: display on screen, not just on console. 
+function showResult(message) {
+  console.log("result: " + message);
 }
-generateUserChoice();
 
-//function clickingButtons() {
-  //const clickedButton = document.querySelector(".choice-button:active")
-  //return clickedButton.id;
-//} 
-  //const userChoice = clickingButtons();
-
-const userChoice = generateUserChoice();
-//const gameResult = playGame(userChoice);
-
-//console.log(gameResult);
-// substitute console.log(winMessage, tieMessage, loseMessage) with function to increment and keep score later.
-
-function playGame(userChoice) {
+function chooseOption(userChoice) {
   // Randomly generated computer's choice
   function generateComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
   }
   const computerChoice = generateComputerChoice();
-console.log(computerChoice);
-
+  console.log("Computer's choice:" + computerChoice);
+console.log("User's choice: " + userChoice);
   if (userChoice === computerChoice) {
-    return tieMessage;
+    showResult(tieMessage);
   } else if (
-    userChoice === "Rock" &&
-    (computerChoice === "Scissors" || computerChoice === "Lizard")
-  )
-    //||
+    (userChoice === "Rock" &&
+      (computerChoice === "Scissors" || computerChoice === "Lizard")) ||
     (userChoice === "Paper" &&
       (computerChoice === "Rock" || computerChoice === "Spock")) ||
-      (userChoice === "Scissors" &&
-        (computerChoice === "Paper" || computerChoice === "Lizard")) ||
-      (userChoice === "Lizard" &&
-        (computerChoice === "Paper" || computerChoice === "Spock")) ||
-      (userChoice === "Spock" &&
-        (computerChoice === "Scissors" || computerChoice === "Rock"));
-  {
-    return winMessage;
-  } //else {
-  //return loseMessage;}
+    (userChoice === "Scissors" &&
+      (computerChoice === "Paper" || computerChoice === "Lizard")) ||
+    (userChoice === "Lizard" &&
+      (computerChoice === "Paper" || computerChoice === "Spock")) ||
+    (userChoice === "Spock" &&
+      (computerChoice === "Scissors" || computerChoice === "Rock"))
+  ) {
+    showResult(winMessage);
+  } else {
+    showResult(loseMessage);
+  }
 }

@@ -72,10 +72,27 @@ header a {
   padding: 2rem;
   margin: 0.5rem;
   font-size: 1.5rem;
+  border-radius: 5%;
+}
+
+.choice-button:hover {
+  background-color: whitesmoke;
+  font-size: 2rem;
 }
 
 .choice-button:active {
-  font-size: 1.5rem;
+  font-size: 2.1rem;
+  background-color: whitesmoke;
+}
+
+input[type=submit]:hover {
+  background-color: whitesmoke;
+  font-size: 2rem;
+}
+
+input[type=submit]:active {
+  background-color: whitesmoke;
+  font-size: 2.1rem;
 }
 
 #game-area {
@@ -89,3 +106,4 @@ header a {
   margin: 0.5rem auto;
   font-size: 1.5rem;
 }
+
