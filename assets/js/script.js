@@ -19,7 +19,7 @@ const scissors = document.getElementById("scissors");
 const lizard = document.getElementById("lizard");
 const spock = document.getElementById("spock");
 
-function clickingButtons() {
+function generateUserChoice() {
   rock.addEventListener("click", function () {
     playGame(choices[0]);
   });
@@ -40,8 +40,18 @@ function clickingButtons() {
     playGame(choices[4]);
   });
 }
-clickingButtons();
+generateUserChoice();
 
+//function clickingButtons() {
+  //const clickedButton = document.querySelector(".choice-button:active")
+  //return clickedButton.id;
+//} 
+  //const userChoice = clickingButtons();
+
+const userChoice = generateUserChoice();
+//const gameResult = playGame(userChoice);
+
+//console.log(gameResult);
 // substitute console.log(winMessage, tieMessage, loseMessage) with function to increment and keep score later.
 
 function playGame(userChoice) {
@@ -51,7 +61,7 @@ function playGame(userChoice) {
   }
   const computerChoice = generateComputerChoice();
 console.log(computerChoice);
-  //const userChoice = clickingButtons();
+
   if (userChoice === computerChoice) {
     return tieMessage;
   } else if (
@@ -68,9 +78,7 @@ console.log(computerChoice);
       (userChoice === "Spock" &&
         (computerChoice === "Scissors" || computerChoice === "Rock"));
   {
-    return "winMessage";
+    return winMessage;
   } //else {
   //return loseMessage;}
 }
-
-
