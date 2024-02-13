@@ -21,23 +21,23 @@ const spock = document.getElementById("spock");
 
 function clickingButtons() {
   rock.addEventListener("click", function () {
-    userChoice(choices[0]);
+    playGame(choices[0]);
   });
 
   paper.addEventListener("click", function () {
-    userChoice(choices[1]);
+    playGame(choices[1]);
   });
 
   scissors.addEventListener("click", function () {
-    userChoice(choices[2]);
+    playGame(choices[2]);
   });
 
   lizard.addEventListener("click", function () {
-    userChoice(choices[3]);
+    playGame(choices[3]);
   });
 
   spock.addEventListener("click", function () {
-    userChoice(choices[4]);
+    playGame(choices[4]);
   });
 }
 clickingButtons();
@@ -46,37 +46,31 @@ clickingButtons();
 
 function playGame(userChoice) {
   // Randomly generated computer's choice
-  function computerChoice() {
-  return choices[Math.floor(Math.random() * choices.length)];
+  function generateComputerChoice() {
+    return choices[Math.floor(Math.random() * choices.length)];
   }
-  console.log(computerChoice());
-  // Do I use "Rock", as in an item from the array choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"], or
-  // do I use rock, as in the const rock = document.getElementById("rock")
-  // for this function?
+  const computerChoice = generateComputerChoice();
+console.log(computerChoice);
+  //const userChoice = clickingButtons();
   if (userChoice === computerChoice) {
     return tieMessage;
-  } else if 
-    (userChoice == "rock" && (computerChoice == "scissors" || computerChoice == "lizard"))
-    (userChoice == "paper" && (computerChoice == "rock" || computerChoice == "spock"))
-    (userChoice == "scissors" && (computerChoice == "paper" || computerChoice == "lizard"))
-    (userChoice == "lizard" && (computerChoice == "paper" || computerChoice == "spock"))
-    (userChoice == "spock" (computerChoice == "scissors" || computerChoice == "rock"))
-   {
-    return winMessage;
-  } else {
-    return loseMessage;
-  }
-  console.log("You chose " + userChoice);
-  console.log("Computer chose " + computerChoice());
+  } else if (
+    userChoice === "Rock" &&
+    (computerChoice === "Scissors" || computerChoice === "Lizard")
+  )
+    //||
+    (userChoice === "Paper" &&
+      (computerChoice === "Rock" || computerChoice === "Spock")) ||
+      (userChoice === "Scissors" &&
+        (computerChoice === "Paper" || computerChoice === "Lizard")) ||
+      (userChoice === "Lizard" &&
+        (computerChoice === "Paper" || computerChoice === "Spock")) ||
+      (userChoice === "Spock" &&
+        (computerChoice === "Scissors" || computerChoice === "Rock"));
+  {
+    return "winMessage";
+  } //else {
+  //return loseMessage;}
 }
 
-  // Local storage for username, gemini, doesn't work:
-  let username = localStorage.getItem("username")
-  usernameInput = {
-  document.getElementById("username-input")
-  const username = usernameInput
-  localStorage.setItem("username", username)
-  const storedUsername = localStorage.getItem("username")
-  console.log(username)
-  }
-  
+
