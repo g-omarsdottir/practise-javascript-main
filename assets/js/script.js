@@ -26,6 +26,7 @@ const spock = document.getElementById("spock");
 
 let displayUserChoice = "";
 let getDisplayUserChoice = document.getElementById("display-user-choise");
+
 //let displayUserChoice = document.getElementById("display-user-choise");
 //let getDisplayComputerChoice = document.getElementById("display-computer-choice");
 
