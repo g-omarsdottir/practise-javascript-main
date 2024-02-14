@@ -44,6 +44,34 @@ To see if it's possible to create a strategy to win randomly generated play move
 
 ## Design
 
+### Imagery
+
+### Colors
+
+### Fonts
+
+## Features
+The website is responsive on all device sizes.
+The user lands on landing page. After entering a username and submitting it, the user is automatically forwarded to the game page. After completing the game, the user has the option to return to game page to play again. The user does not have the option to navigate between the pages.
+Buttons have pseuodelinks to give users feedback when mouse is hovered over the buttons by increasing fontsize and slight change of color, as well as when a button is clicked by increasing fontsize and changing colors even more.
+
+### Interactive Elements
+Input element to enter a username chosen by the user. The user cannot move forward to playing game without entering a username. 
+Buttons to choose which variable the user wants to play.
+Return button to return to game and play another game.
+A link to access the rules again, which open in a new window / OR blend rules in and out when clicked and then return to game button (To-do!) so that the game can resume.
+
+### General Features of Each Page
+Landing page
+Game page
+End screen "thank you [username] ..."
+
+## Accessibility 
+
+## Technology Used
+
+
+
 
 
 

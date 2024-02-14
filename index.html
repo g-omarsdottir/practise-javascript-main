@@ -25,7 +25,10 @@
     <div id="game-area" class="centered">
        
       <!-- <button class="start-button">Start Game <i class="fa-regular fa-circle-play"></i></button> -->
-
+<div id="scoreboard">
+  <h2>Scoreboard</h2>
+  <span><p>Your score: </p><p id="user-score">0</p></span>
+</div>
       <div class="container centered">
         <h2 id="screen-message">Try your luck!</h2>
         <button id="rock" class="choice-button">Rock  <i class="fa-regular fa-hand-back-fist"></i></button>
@@ -37,6 +40,10 @@
         <button id="lizard" class="choice-button">Lizard  <i class="fa-regular fa-hand-lizard"></i></button>
 
         <button id="spock" class="choice-button">Spock <i class="fa-regular fa-hand-spock"></i></button>
+      </div>
+      <div>
+        <h3>Your choice: </h3><span><p id="display-user-choice"></p></span>
+        <h3>Computer's choice: </h3><span id="display-computer-choice">x</span>
       </div>
     </div>
     <script src="assets/js/script.js"></script>
