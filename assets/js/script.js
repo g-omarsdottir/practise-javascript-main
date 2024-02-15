@@ -85,13 +85,12 @@ function userTies(userChoice, computerChoice) {
 function userLoses(userChoice, computerChoice) {
   getOutcome.innerHTML = "Your choice: " + userChoice + " vs. " + "Computer's choice: " + computerChoice + ": " + loseMessage;
 }
-
+function generateComputerChoice() {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
 // Compare choices: deciding which choice wins
 function compareChoices(userChoice) {
   // Randomly generated computer's choice
-  function generateComputerChoice() {
-    return choices[Math.floor(Math.random() * choices.length)];
-  }
   let computerChoice = generateComputerChoice();
   //console.log("User's choice: " + userChoice);
   //console.log("Computer's choice: " + computerChoice);
