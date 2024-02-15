@@ -55,7 +55,7 @@ spock.addEventListener("click", function () {
 
 // Store username
 function storeUsername() {
-localStorage.setItem(getUsername);
+localStorage.setItem(user, value);
 let displayUsername = localStorage.getItem(getUsername);
 displayUsername.innerHTML = "This is your username" + getUsername;
 console.log(getUsername);
