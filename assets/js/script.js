@@ -6,6 +6,10 @@
 if (typeof document !== "undefined") {
   let element = document.querySelector(".class-name");
 }
+//Username
+let displayUsername = document.querySelector("test-username-input > span")
+let getUsername = document.querySelector(".username-input");
+
 // Messages for results / user feedback
 const winMessage = "You win! Yay!";
 const tieMessage = "It's a tie! Everybody wins!";
@@ -23,9 +27,8 @@ const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const lizard = document.getElementById("lizard");
 const spock = document.getElementById("spock");
-
-let displayUserChoice = "";
-let getDisplayUserChoice = document.getElementById("display-user-choise");
+// Outcome variables
+let getOutcome = document.querySelector(".outcome > p");
 
 //let displayUserChoice = document.getElementById("display-user-choise");
 //let getDisplayComputerChoice = document.getElementById("display-computer-choice");
@@ -51,15 +54,37 @@ spock.addEventListener("click", function () {
   compareChoices(choices[4]);
 });
 
-// Feedback to user while playing. To-do: display on screen, not just on console. 
-function showResult(message) {
-  console.log("Show result: " + message);
+// Store username
+function storeUsername() {
+localStorage.setItem(getUsername);
+let displayUsername = localStorage.getItem(getUsername);
+displayUsername.innerHTML = "This is your username" + getUsername;
+console.log(getUsername);
 }
 
+// Feedback to user while playing. Replaced by get.Outcome.innerHTML and displayed on browser. 
+//function showResult(message) {
+ // console.log("Show result: " + message);
+//}
+
+//Function to show actual reason for win/tie/lose
+//function showActualResult(option) {
+  //if (option === "Rock") return 
+//}
+
 // Function for when the outcome of comparing the choices is that user wins to increment user's score
-function userWins () {
+function userWins(userChoice, computerChoice) {
   userScore++;
   getUserScore.innerHTML = userScore;
+  getOutcome.innerHTML = "Your choice: " + userChoice + " beats " + "Computer's choice: " + computerChoice + ": " + winMessage;
+}
+
+function userTies(userChoice, computerChoice) {
+  getOutcome.innerHTML = "Your choice: " + userChoice + " vs. " + "Computer's choice: " + computerChoice + ": " + tieMessage;
+}
+
+function userLoses(userChoice, computerChoice) {
+  getOutcome.innerHTML = "Your choice: " + userChoice + " vs. " + "Computer's choice: " + computerChoice + ": " + loseMessage;
 }
 
 // Compare choices: deciding which choice wins
@@ -69,10 +94,11 @@ function compareChoices(userChoice) {
     return choices[Math.floor(Math.random() * choices.length)];
   }
   let computerChoice = generateComputerChoice();
-  console.log("Computer's choice: " + computerChoice);
-  console.log("User's choice: " + userChoice);
+  //console.log("User's choice: " + userChoice);
+  //console.log("Computer's choice: " + computerChoice);
   if (userChoice === computerChoice) {
-    showResult(tieMessage);
+    userTies(userChoice, computerChoice);
+    //showResult(tieMessage);
   } else if (
     (userChoice === "Rock" &&
       (computerChoice === "Scissors" || computerChoice === "Lizard")) ||
@@ -85,12 +111,19 @@ function compareChoices(userChoice) {
     (userChoice === "Spock" &&
       (computerChoice === "Scissors" || computerChoice === "Rock"))
   ) {
-    userWins();
-    showResult(winMessage);
+    userWins(userChoice, computerChoice);
+    //showResult(winMessage);
   } else {
-    showResult(loseMessage);
+    userLoses(userChoice, computerChoice);
+    //showResult(loseMessage);
   }
 }
 
-// Scoreboard functions, incrementing user-score
+//if (userScore === 10) {
+  //window.location.assign("end.html")
+//}
+
+//while (userScore < 11) {
+  //compareChoices();
+//}
 

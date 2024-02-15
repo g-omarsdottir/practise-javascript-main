@@ -77,8 +77,44 @@ Markdown for this README
 
 
 
+## Bugs
+
+### Solved Bugs
+const vs. let: because computerChoice is randomly generated and never the same, it should be let and not const.
+const computerChoice = generateComputerChoice(); changed to let computerChoice = generateComputerChoice();
+
+Forgot to close parenthesis (see below as ### heading). I was stuck on this logic for ages, but glad I didn't give up.
+function compareChoices(userChoice) {
+  // Randomly generated computer's choice
+  function generateComputerChoice() {
+    return choices[Math.floor(Math.random() * choices.length)];
+  }
+  let computerChoice = generateComputerChoice();
+  console.log("Computer's choice: " + computerChoice);
+  console.log("User's choice: " + userChoice);
+  if (userChoice === computerChoice) {
+    showResult(tieMessage);
+  } else if (
+    (userChoice === "Rock" &&
+      (computerChoice === "Scissors" || computerChoice === "Lizard")) ||
+    (userChoice === "Paper" &&
+      (computerChoice === "Rock" || computerChoice === "Spock")) ||
+    (userChoice === "Scissors" &&
+      (computerChoice === "Paper" || computerChoice === "Lizard")) ||
+    (userChoice === "Lizard" &&
+      (computerChoice === "Paper" || computerChoice === "Spock")) ||
+    (userChoice === "Spock" &&
+      (computerChoice === "Scissors" || computerChoice === "Rock"))
+  ### ) {
+    userWins();
+    showResult(winMessage);
+  } else {
+    showResult(loseMessage);
+  }
+}
 
 
 
 ## Credits
 randomly generated computer's choice: https://timonweb.com/javascript/how-to-get-a-random-value-from-a-javascript-array/ 
+Tutorial for inspiration: https://www.youtube.com/watch?v=jaVNP3nIAv0
