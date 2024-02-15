@@ -3,9 +3,8 @@
 //https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener?retiredLocale=de
 //https://www.w3schools.com/js/js_htmldom_eventlistener.asp
 
-if (typeof document !== "undefined") {
-  let element = document.querySelector(".class-name");
-}
+// Was supposed to get rid of error message node js: if (typeof document !== "undefined") {  let element = document.querySelector(".class-name"); }
+
 //Username
 let displayUsername = document.querySelector("test-username-input > span")
 let getUsername = document.querySelector(".username-input");
