@@ -13,6 +13,14 @@
   text-align: center;
 }
 
+.container {
+  background-color: lightyellow;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+
 /* Header */
 
 /* Navigation Menu */
@@ -61,11 +69,14 @@ header a {
     background-color: lightgreen;
   }*/
 
+
+  
 .choice-button {
   padding: 2rem;
   margin: 0.5rem;
   font-size: 1.5rem;
   border-radius: 5%;
+  white-space: nowrap;
 }
 
 .choice-button:hover {
@@ -98,13 +109,17 @@ input[type=submit]:active {
   font-size: 1.5rem;
 }
 
-.container {
-  background-color: lightyellow;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
-  }
+footer {
+  background-color: coral;
+  padding: 1%;
+}
+
+footer a {
+  
+}
+
+
+
 
 /* End Screen */
 .return-button {

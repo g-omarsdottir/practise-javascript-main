@@ -1,6 +1,10 @@
 # Rock, Paper, Scissors, Lizard, Spock, Game
+
+## View the Live Game Project Here 
+https://g-omarsdottir.github.io/practise-javascript-main/
+
 ## Introduction
-The game is an extended version of the well known Rock, Paper, Scissors game, just with an added twist. he game was originally created by Sam Kass with Karen Brylan, who intruduced two furhter variables into the game: 
+The game is an extended version of the well known Rock, Paper, Scissors game, just with an added twist. The game was originally created by Sam Kass with Karen Brylan, who intruduced two further variables into the game: 
 a lizard and the character from the renowned TV series Star Trek, Spock. Even though it certainly gives the game a deeper meaning to be familiar with the character Spock and presumably makes it easier in the beginning to memorize the rules to play, it is not necessary to be able to play and enjoy the game.
 The game was displayed on the TV sitcom The Big Bang Theory, after which it gained popularity.
 
@@ -118,3 +122,7 @@ function compareChoices(userChoice) {
 ## Credits
 randomly generated computer's choice: https://timonweb.com/javascript/how-to-get-a-random-value-from-a-javascript-array/ 
 Tutorial for inspiration: https://www.youtube.com/watch?v=jaVNP3nIAv0
+Push footer down with little content: https://stackoverflow.com/questions/4575826/how-to-push-a-footer-to-the-bottom-of-page-when-content-is-short-or-missing 
+Add event listeners:
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener?retiredLocale=de
+https://www.w3schools.com/js/js_htmldom_eventlistener.asp
