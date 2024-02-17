@@ -9,23 +9,25 @@
 let displayUsername = document.querySelector("test-username-input > span")
 let getUsername = document.querySelector(".username-input");
 
-// Messages for results / user feedback
+// Messages for results / user feedback variables
 const winMessage = "You win! Yay!";
 const tieMessage = "It's a tie! Everybody wins!";
 const loseMessage = "Yaiks, that plan backfired! Better luck next time!";
 
 // Scoreboard variables
 let userScore = 0;
-let getUserScore = document.getElementById("user-score")
+let getUserScore = document.getElementById("user-score");
+let computerScore = 0;
+let getComputerScore = document.getElementById("computer-score");
 
 // Choice-buttons variables
-const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+const choicesArray = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
 // following variables are for add.Event.Listener("click")
-const rock = document.getElementById("rock");
-const paper = document.getElementById("paper");
-const scissors = document.getElementById("scissors");
-const lizard = document.getElementById("lizard");
-const spock = document.getElementById("spock");
+const rockVar = document.getElementById("rock");
+const paperVar = document.getElementById("paper");
+const scissorsVar = document.getElementById("scissors");
+const lizardVar = document.getElementById("lizard");
+const spockVar = document.getElementById("spock");
 // Outcome variables
 let getOutcome = document.querySelector(".outcome > p");
 
@@ -33,32 +35,47 @@ let getOutcome = document.querySelector(".outcome > p");
 //let getDisplayComputerChoice = document.getElementById("display-computer-choice");
 
 // Event listeners for choice-buttons
-rock.addEventListener("click", function () {
-  compareChoices(choices[0]);
+rockVar.addEventListener("click", function () {
+  compareChoices(choicesArray[0]);
 });
 
-paper.addEventListener("click", function () {
-  compareChoices(choices[1]);
+paperVar.addEventListener("click", function () {
+  compareChoices(choicesArray[1]);
 });
 
-scissors.addEventListener("click", function () {
-  compareChoices(choices[2]);
+scissorsVar.addEventListener("click", function () {
+  compareChoices(choicesArray[2]);
 });
 
-lizard.addEventListener("click", function () {
-  compareChoices(choices[3]);
+lizardVar.addEventListener("click", function () {
+  compareChoices(choicesArray[3]);
 });
 
-spock.addEventListener("click", function () {
-  compareChoices(choices[4]);
+spockVar.addEventListener("click", function () {
+  compareChoices(choicesArray[4]);
 });
 
 // Store username
 function storeUsername() {
-localStorage.setItem(user, value);
-let displayUsername = localStorage.getItem(getUsername);
-displayUsername.innerHTML = "This is your username" + getUsername;
-console.log(getUsername);
+  localStorage.setItem(user, value);
+  let displayUsername = localStorage.getItem(getUsername);
+  displayUsername.innerHTML = "This is your username" + getUsername;
+  console.log(getUsername);
+  }
+
+function generateComputerChoice() {
+  return choicesArray[Math.floor(Math.random() * choicesArray.length)];
+}
+
+// Increment Scores
+function incrementUserScore () {
+  userScore++;
+  getUserScore.innerHTML = userScore;
+}
+
+function incrementComputerScore () {
+  computerScore++;
+  getComputerScore.innerHTML = computerScore;
 }
 
 // Feedback to user while playing. Replaced by get.Outcome.innerHTML and displayed on browser. 
@@ -73,8 +90,7 @@ console.log(getUsername);
 
 // Function for when the outcome of comparing the choices is that user wins to increment user's score
 function userWins(userChoice, computerChoice) {
-  userScore++;
-  getUserScore.innerHTML = userScore;
+  incrementUserScore ();
   getOutcome.innerHTML = "Your choice: " + userChoice + " beats " + "Computer's choice: " + computerChoice + ": " + winMessage;
 }
 
@@ -83,11 +99,10 @@ function userTies(userChoice, computerChoice) {
 }
 
 function userLoses(userChoice, computerChoice) {
+  incrementComputerScore ();
   getOutcome.innerHTML = "Your choice: " + userChoice + " vs. " + "Computer's choice: " + computerChoice + ": " + loseMessage;
 }
-function generateComputerChoice() {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
+
 // Compare choices: deciding which choice wins
 function compareChoices(userChoice) {
   // Randomly generated computer's choice
