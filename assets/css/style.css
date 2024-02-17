@@ -6,6 +6,10 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+h1 {
+  font-size: 1.5rem;
+}
+
 .centered {
   /*display: flex;
   flex-direction: column;*/
@@ -24,6 +28,10 @@
 /* Header */
 
 /* Navigation Menu */
+header {
+  margin-top: 1.5rem;
+}
+
 header a {
   text-decoration: none;
   margin-right: 40px;
@@ -69,14 +77,44 @@ header a {
     background-color: lightgreen;
   }*/
 
+/* Scoreboard styles */
+#scoreboard {
+  border: 1px solid;
+  padding: 20px;
+  margin: 1.2rem;
+}
 
-  
+#scores {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#scoreboard-user {
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+  background-color: aquamarine;
+  width: 160px;
+}
+
+#scoreboard-computer {
+  border: 1px solid;
+  margin: 10px;
+  padding: 10px;
+  background-color: lightpink;
+  width: 160px;
+}
+ 
+/* Game  buttons styles */
 .choice-button {
   padding: 2rem;
   margin: 0.5rem;
   font-size: 1.5rem;
   border-radius: 5%;
   white-space: nowrap;
+  width: 195px;
 }
 
 .choice-button:hover {
@@ -109,17 +147,11 @@ input[type=submit]:active {
   font-size: 1.5rem;
 }
 
+/* Footer styles */
 footer {
-  background-color: coral;
+  background-color: lightsteelblue;
   padding: 1%;
 }
-
-footer a {
-  
-}
-
-
-
 
 /* End Screen */
 .return-button {

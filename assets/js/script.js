@@ -24,7 +24,7 @@ const scissorsVar = document.getElementById("scissors");
 const lizardVar = document.getElementById("lizard");
 const spockVar = document.getElementById("spock");
 // Outcome variables
-let getOutcome = document.querySelector(".outcome > p");
+let getOutcome = document.querySelector(".outcome");
 
 //let displayUserChoice = document.getElementById("display-user-choise");
 //let getDisplayComputerChoice = document.getElementById("display-computer-choice");

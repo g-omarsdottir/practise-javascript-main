@@ -4,56 +4,80 @@
     <meta charset="UTF-8" />
     <!-- To-do: Add meta data to all pages -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Rock, Paper, Scissors, Lizard, Spock">
-    <meta name="keywords"
-        content="rock, paper, scissors, lizard, spock, big bang theory game, easy game, game, play game">
-    <meta name="author" content="Gudrun Omarsdottir">
+    <meta name="description" content="Rock, Paper, Scissors, Lizard, Spock" />
+    <meta
+      name="keywords"
+      content="rock, paper, scissors, lizard, spock, big bang theory game, easy game, game, play game"
+    />
+    <meta name="author" content="Gudrun Omarsdottir" />
     <title>RPSLS - Game On!</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <div class="container centered">
-    <header class="centered">
-<nav>
-  <ul id="navbar">
-    <li><a href="start.html">Start Screen</a></li>
-    <li><a href="index.html" class="current-page">Play Game</a></li>
-    <li><a href="end.html">End Screen</a></li>
-  </ul>
-</nav>
+      <header class="centered">
+        <nav>
+          <ul id="navbar">
+            <li><a href="start.html">Start Screen</a></li>
+            <li><a href="index.html" class="current-page">Play Game</a></li>
+            <li><a href="end.html">End Screen</a></li>
+          </ul>
+        </nav>
 
-  <h1>Rock Paper Scissors Lizard Spock</h1>
-    </header>
-    <main>
-      <!-- <button class="start-button">Start Game <i class="fa-regular fa-circle-play"></i></button> -->
-    <div id="scoreboard">
-    <h2>Scoreboard</h2>
-    <span><p>Your score: </p><p id="user-score">0</p></span>
-    <span><p>Computer's score</p><p id="computer-score">0</p></span>
+        <h1>Rock, Paper, Scissors, Lizard, Spock - Game</h1>
+      </header>
+      <main>
+        <!-- <button class="start-button">Start Game <i class="fa-regular fa-circle-play"></i></button> -->
+        <div id="scoreboard">
+          <h2>Scoreboard</h2>
+          <div id="scores">
+          <div id="scoreboard-user">
+            <p>Your score:</p>
+              <p id="user-score">0</p>
+          </div>
+          <div id="scoreboard-computer">
+              <p>Computer's score</p>
+              <p id="computer-score">0</p>
+            </div>
+          </div>
+        </div>
+        <div class="centered">
+          <h3 class="outcome">Try your luck!</h3>
+          <button id="rock" class="choice-button">
+            Rock <i class="fa-regular fa-hand-back-fist"></i>
+          </button>
+
+          <button id="paper" class="choice-button">
+            Paper <i class="fa-regular fa-hand"></i>
+          </button>
+
+          <button id="scissors" class="choice-button">
+            Scissors <i class="fa-regular fa-hand-scissors"></i>
+          </button>
+
+          <button id="lizard" class="choice-button">
+            Lizard <i class="fa-regular fa-hand-lizard"></i>
+          </button>
+
+          <button id="spock" class="choice-button">
+            Spock <i class="fa-regular fa-hand-spock"></i>
+          </button>
+        </div>
+      </main>
+      <footer>
+        <a
+          href="https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock"
+          target="_blank"
+          rel="noopener"
+          aria-label="Click here to read more about the origin of the game (opens in a new tab)"
+          >Origin of the game</a
+        >
+      </footer>
     </div>
-      <div class="centered">
-        <h2 id="screen-message">Try your luck!</h2>
-        <button id="rock" class="choice-button">Rock  <i class="fa-regular fa-hand-back-fist"></i></button>
-
-        <button id="paper" class="choice-button">Paper  <i class="fa-regular fa-hand"></i></button>
-
-        <button id="scissors" class="choice-button">Scissors  <i class="fa-regular fa-hand-scissors"></i></button>
-
-        <button id="lizard" class="choice-button">Lizard  <i class="fa-regular fa-hand-lizard"></i></button>
-
-        <button id="spock" class="choice-button">Spock <i class="fa-regular fa-hand-spock"></i></button>
-      </div>
-      <div class="outcome centered">
-        <p>Your choice vs. computer's choice</p>
-        <!--  
-          <h3>Your choice: </h3><span><p id="display-user-choice">x</p></span>
-          <h3>Computer's choice: </h3><span id="display-computer-choice">x</span>
-        -->
-      </div>
-    </main>
-    <footer><a href="https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock" target="_blank" rel="noopener" aria-label="Click here to read more about the origin of the game (opens in a new tab)">Origin of the game</a></footer>
-  </div>
     <script src="assets/js/script.js"></script>
-    <script src="https://kit.fontawesome.com/c62380739e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/c62380739e.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
