@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <div class="container centered">
     <header class="centered">
 <nav>
   <ul id="navbar">
@@ -20,16 +21,16 @@
     <li><a href="end.html">End Screen</a></li>
   </ul>
 </nav>
-      <h1>Rock Paper Scissors Lizard Spock</h1>
+
+  <h1>Rock Paper Scissors Lizard Spock</h1>
     </header>
-    <div id="game-area" class="centered">
-       
+    <main>
       <!-- <button class="start-button">Start Game <i class="fa-regular fa-circle-play"></i></button> -->
-<div id="scoreboard">
-  <h2>Scoreboard</h2>
-  <span><p>Your score: </p><p id="user-score">0</p></span>
-  <span><p>Computer's score</p><p id="computer-score">0</p></span>
-</div>
+    <div id="scoreboard">
+    <h2>Scoreboard</h2>
+    <span><p>Your score: </p><p id="user-score">0</p></span>
+    <span><p>Computer's score</p><p id="computer-score">0</p></span>
+    </div>
       <div class="centered">
         <h2 id="screen-message">Try your luck!</h2>
         <button id="rock" class="choice-button">Rock  <i class="fa-regular fa-hand-back-fist"></i></button>
@@ -49,8 +50,9 @@
           <h3>Computer's choice: </h3><span id="display-computer-choice">x</span>
         -->
       </div>
-    </div>
+    </main>
     <footer>Footer</footer>
+  </div>
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/c62380739e.js" crossorigin="anonymous"></script>
   </body>

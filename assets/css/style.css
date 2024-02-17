@@ -1,11 +1,16 @@
+/* General styles */
 * {
+  margin: 0;
+  padding: 0;
     box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-main {
-  /* push footer down */
-  flex: 1 0 ;
+.centered {
+  /*display: flex;
+  flex-direction: column;*/
+  justify-content: center;
+  text-align: center;
 }
 
 /* Header */
@@ -27,14 +32,9 @@ header a {
   justify-content: center;
 }
 
-/* General styles */
+/* Main content */
 
-.centered {
-    /*display: flex;
-    flex-direction: column;*/
-    justify-content: center;
-    text-align: center;
-}
+
 
 /* Start Screen */
 
@@ -60,8 +60,6 @@ header a {
     width: 60%;
     background-color: lightgreen;
   }*/
-
-  /* unused class: container */
 
 .choice-button {
   padding: 2rem;
@@ -100,8 +98,12 @@ input[type=submit]:active {
   font-size: 1.5rem;
 }
 
-#game-area {
+.container {
   background-color: lightyellow;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
   }
 
 /* End Screen */
