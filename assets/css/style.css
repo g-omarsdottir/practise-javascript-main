@@ -2,8 +2,9 @@
 * {
   margin: 0;
   padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 h1 {
@@ -23,7 +24,7 @@ h1 {
   min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
-  }
+}
 
 /* Header */
 
@@ -50,17 +51,15 @@ header a {
 
 /* Main content */
 
-
-
 /* Start Screen */
 
-#list-rules>li {
+#list-rules > li {
   margin-bottom: 20px;
   text-align: left;
   margin-left: 42%;
 }
 
-.enter-game-button, 
+.enter-game-button,
 .username-input {
   padding: 20px;
   margin-right: 10px;
@@ -106,33 +105,57 @@ header a {
   background-color: lightpink;
   width: 160px;
 }
- 
+
 /* Game  buttons styles */
 .choice-button {
-  padding: 2rem;
+  padding-bottom: 100px;
+  padding-top: 5px;
   margin: 0.5rem;
   font-size: 1.5rem;
   border-radius: 5%;
   white-space: nowrap;
   width: 195px;
+  height: 100px;
 }
 
 .choice-button:hover {
-  background-color: whitesmoke;
-  font-size: 2rem;
+  background-color: white;
+  font-size: 1.7rem;
 }
 
 .choice-button:active {
-  font-size: 2.1rem;
-  background-color: whitesmoke;
+  font-size: 1.75rem;
+  background-color: rgb(228, 247, 229);
 }
 
-input[type=submit]:hover {
+#rock {
+  background: url(../images/rockos-besseros.png) no-repeat bottom / contain
+    white;
+}
+
+#paper {
+  background: url(../images/papiros-oldos.png) no-repeat bottom / contain white;
+}
+
+#scissors {
+  background: url(../images/si-scissores.png) no-repeat center / contain white;
+}
+
+#lizard {
+  background: url(../images/lizardino-vamonos.png) no-repeat center / contain
+    white;
+}
+
+#spock {
+  background: url(../images/spockos-gutos.png) no-repeat center / contain white;
+}
+
+input[type="submit"]:hover {
   background-color: whitesmoke;
   font-size: 2rem;
 }
 
-input[type=submit]:active {
+input[type="submit"]:active {
   background-color: whitesmoke;
   font-size: 2.1rem;
 }
@@ -160,4 +183,3 @@ footer {
   margin: 0.5rem auto;
   font-size: 1.5rem;
 }
-

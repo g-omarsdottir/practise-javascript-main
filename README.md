@@ -126,3 +126,4 @@ Push footer down with little content: https://stackoverflow.com/questions/457582
 Add event listeners:
 https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener?retiredLocale=de
 https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+Spock image: Pixabay.com service license: [...]the Content License allows users to:Modify or adapt Content into new works (https://pixabay.com/service/license-summary/)
