@@ -138,7 +138,7 @@ header a {
 }
 
 #scissors {
-  background: url(../images/si-scissores.png) no-repeat center / contain white;
+  background: url(../images/si-scissores-mirrored.png) no-repeat center / contain white;
 }
 
 #lizard {
@@ -147,7 +147,7 @@ header a {
 }
 
 #spock {
-  background: url(../images/spockos-gutos.png) no-repeat center / contain white;
+  background: url(../images/spockos-gutos-mirrored.png) no-repeat center / contain white;
 }
 
 input[type="submit"]:hover {
