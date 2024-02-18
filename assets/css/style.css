@@ -120,11 +120,13 @@ header a {
 
 .choice-button:hover {
   background-color: white;
-  font-size: 1.7rem;
+  /* perspective for getting rid of blurry effect */
+  transform: scale(1.1) perspective(1px);
+  transition: 0.25s;
 }
 
 .choice-button:active {
-  font-size: 1.75rem;
+  transform: scale(1.2);
   background-color: rgb(228, 247, 229);
 }
 
