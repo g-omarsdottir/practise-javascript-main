@@ -1,7 +1,7 @@
 // Was supposed to get rid of error message node js: if (typeof document !== "undefined") {  let element = document.querySelector(".class-name"); }
 
 //Username
-let displayUsername = document.querySelector("test-username-input > span")
+let displayUsername = document.querySelector("test-username-input > span");
 let getUsername = document.querySelector(".username-input");
 
 // Messages for results / user feedback variables
@@ -23,6 +23,7 @@ const paperVar = document.getElementById("paper");
 const scissorsVar = document.getElementById("scissors");
 const lizardVar = document.getElementById("lizard");
 const spockVar = document.getElementById("spock");
+const choiceButtons = (rockVar, paperVar, scissorsVar, lizardVar, spockVar);
 // Outcome variables
 let getOutcome = document.querySelector(".outcome");
 
@@ -56,46 +57,67 @@ function storeUsername() {
   let displayUsername = localStorage.getItem(getUsername);
   displayUsername.innerHTML = "This is your username" + getUsername;
   console.log(getUsername);
-  }
+}
 
 function generateComputerChoice() {
   return choicesArray[Math.floor(Math.random() * choicesArray.length)];
 }
 
 // Increment Scores
-function incrementUserScore () {
+function incrementUserScore() {
   userScore++;
   getUserScore.innerHTML = userScore;
 }
 
-function incrementComputerScore () {
+function incrementComputerScore() {
   computerScore++;
   getComputerScore.innerHTML = computerScore;
 }
 
-// Feedback to user while playing. Replaced by get.Outcome.innerHTML and displayed on browser. 
+// Feedback to user while playing. Replaced by get.Outcome.innerHTML and displayed on browser.
 //function showResult(message) {
- // console.log("Show result: " + message);
+// console.log("Show result: " + message);
 //}
 
 //Function to show actual reason for win/tie/lose
 //function showActualResult(option) {
-  //if (option === "Rock") return 
+//if (option === "Rock") return
 //}
 
 // Function for when the outcome of comparing the choices is that user wins to increment user's score
 function userWins(userChoice, computerChoice) {
-  incrementUserScore ();
-  getOutcome.innerHTML = "Your choice: " + userChoice + " beats " + "Computer's choice: " + computerChoice + ": " + winMessage;
+  incrementUserScore();
+  getOutcome.innerHTML =
+    "Your choice: " +
+    userChoice +
+    " beats " +
+    "Computer's choice: " +
+    computerChoice +
+    ": " +
+    winMessage;
 }
 
 function userTies(userChoice, computerChoice) {
-  getOutcome.innerHTML = "Your choice: " + userChoice + " vs. " + "Computer's choice: " + computerChoice + ": " + tieMessage;
+  getOutcome.innerHTML =
+    "Your choice: " +
+    userChoice +
+    " vs. " +
+    "Computer's choice: " +
+    computerChoice +
+    ": " +
+    tieMessage;
 }
 
 function userLoses(userChoice, computerChoice) {
-  incrementComputerScore ();
-  getOutcome.innerHTML = "Your choice: " + userChoice + " vs. " + "Computer's choice: " + computerChoice + ": " + loseMessage;
+  incrementComputerScore();
+  getOutcome.innerHTML =
+    "Your choice: " +
+    userChoice +
+    " vs. " +
+    "Computer's choice: " +
+    computerChoice +
+    ": " +
+    loseMessage;
 }
 
 // Compare choices: deciding which choice wins
@@ -127,11 +149,11 @@ function compareChoices(userChoice) {
   }
 }
 
+
 //if (userScore === 10) {
-  //window.location.assign("end.html")
+//window.location.assign("end.html")
 //}
 
 //while (userScore < 11) {
-  //compareChoices();
+//compareChoices();
 //}
-
