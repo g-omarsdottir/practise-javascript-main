@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #060A39;
 }
 
 h1 {
@@ -19,7 +20,7 @@ h1 {
 }
 
 .container {
-  background-color: lightyellow;
+  background-color: #F9F5C6;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -39,7 +40,7 @@ header a {
 }
 
 .current-page {
-  border-bottom: 1px solid #3a3a3a;
+  border-bottom: 1px solid #060A39;
 }
 
 #navbar {
@@ -81,8 +82,19 @@ h1 {
   }*/
 
 /* Scoreboard styles */
+
+.outcome {
+  border: 1px solid #060A39;
+  padding: 2rem;
+  margin: 1.2rem;
+  border-radius: 2%;
+  background-color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
 #scoreboard {
-  border: 1px solid;
+  border: 1px solid #060A39;
   padding: 20px;
   margin: 1.2rem;
 }
@@ -95,18 +107,18 @@ h1 {
 }
 
 #scoreboard-user {
-  border: 1px solid;
+  border: 1px solid #060A39;
   padding: 10px;
   margin: 10px;
-  background-color: aquamarine;
+  background-color: #D9EE3E;
   width: 160px;
 }
 
 #scoreboard-computer {
-  border: 1px solid;
+  border: 1px solid #060A39;
   margin: 10px;
   padding: 10px;
-  background-color: lightpink;
+  background-color: #DBDDC6;
   width: 160px;
 }
 
@@ -116,6 +128,7 @@ h1 {
   padding-top: 5px;
   margin: 0.5rem;
   font-size: 1.5rem;
+  border: 2px solid #060A39;
   border-radius: 5%;
   white-space: nowrap;
   width: 195px;
@@ -166,21 +179,16 @@ input[type="submit"]:active {
   font-size: 2.1rem;
 }
 
-.outcome {
-  border: 1px solid;
-  padding: 2rem;
-  margin: 1.2rem;
-  border-radius: 2%;
-  background-color: lightgreen;
-  font-weight: 400;
-  font-size: 1.5rem;
-}
+
 
 /* Footer styles */
 footer {
-  background-color: lightsteelblue;
+  background-color: #B9C46A;
+  /* 3D effect */
+  box-shadow: 0 3px 3px #7B8246 inset;
   padding: 1%;
 }
+
 
 /* End Screen */
 .return-button {
