@@ -24,6 +24,7 @@ h1 {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  /* Push footer down */ 
   justify-content: space-between;
 }
 
@@ -93,10 +94,16 @@ h1 {
   font-size: 1.5rem;
 }
 
+#parent-scoreboard {
+  display: flex;
+  justify-content: center;
+}
+
 #scoreboard {
   border: 1px solid #060A39;
   padding: 20px;
-  margin: 1.2rem;
+  width: fit-content;
+  justify-content: center;
 }
 
 #scores {
