@@ -25,7 +25,7 @@ const lizardVar = document.getElementById("lizard");
 const spockVar = document.getElementById("spock");
 const choiceButtons = (rockVar, paperVar, scissorsVar, lizardVar, spockVar);
 // Outcome variables
-let getOutcome = document.querySelector(".outcome");
+let getOutcome = document.getElementById("outcome");
 
 //let displayUserChoice = document.getElementById("display-user-choise");
 //let getDisplayComputerChoice = document.getElementById("display-computer-choice");

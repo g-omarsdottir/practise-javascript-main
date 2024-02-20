@@ -87,7 +87,7 @@ h1 {
 
 /* Scoreboard styles */
 
-.outcome {
+#outcome {
   padding: 20px;
   margin: 20px auto;
   font-weight: 400;
