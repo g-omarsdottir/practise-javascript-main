@@ -12,6 +12,10 @@ h1 {
   font-size: 1.5rem;
 }
 
+h2 {
+  font-size: 1.2rem;
+}
+
 .centered {
   /*display: flex;
   flex-direction: column;*/
@@ -85,25 +89,27 @@ h1 {
 /* Scoreboard styles */
 
 .outcome {
-  border: 1px solid #060A39;
-  padding: 2rem;
-  margin: 1.2rem;
-  border-radius: 2%;
-  background-color: white;
+  padding: 1.5rem;
+  margin: 1rem;
   font-weight: 400;
   font-size: 1.5rem;
 }
 
-#parent-scoreboard {
+#scoreboard-box {
   display: flex;
   justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
 }
 
 #scoreboard {
-  border: 1px solid #060A39;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   width: fit-content;
-  justify-content: center;
+  /*border: 6px groove #E1F933;
+  border-radius: 3%;
+/* 7B8246*/*/
 }
 
 #scores {
@@ -114,19 +120,38 @@ h1 {
 }
 
 #scoreboard-user {
-  border: 1px solid #060A39;
   padding: 10px;
   margin: 10px;
-  background-color: #D9EE3E;
-  width: 160px;
+  width: 200px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #E1F933;
+  border: 8px groove #E1F933;
+  border-radius: 3%;
 }
 
 #scoreboard-computer {
-  border: 1px solid #060A39;
+  width: 200px;
+  height: 80px;
   margin: 10px;
   padding: 10px;
-  background-color: #DBDDC6;
-  width: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #979c645d;
+  /*border: 1px solid #060A39;*/
+  border: 8px groove #E1F933;
+  border-radius: 3%;
+}
+
+.choice-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Game  buttons styles */
@@ -191,6 +216,7 @@ input[type="submit"]:active {
 /* Footer styles */
 footer {
   background-color: #B9C46A;
+  
   /* 3D effect */
   box-shadow: 0 3px 3px #7B8246 inset;
   padding: 1%;
