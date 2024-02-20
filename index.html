@@ -10,9 +10,24 @@
       content="rock, paper, scissors, lizard, spock, big bang theory game, easy game, game, play game"
     />
     <meta name="author" content="Gudrun Omarsdottir" />
-    <link rel="icon" sizes="16x16" type="img/png" href="assets/favicon/Martz90-Circle-Games.16.png">
-    <link rel="icon" sizes="24x24" type="img/png" href="assets/favicon/Martz90-Circle-Games.24.png">
-    <link rel="icon" sizes="32x32" type="img/png" href="assets/favicon/Martz90-Circle-Games.32.png">
+    <link
+      rel="icon"
+      sizes="16x16"
+      type="img/png"
+      href="assets/favicon/Martz90-Circle-Games.16.png"
+    />
+    <link
+      rel="icon"
+      sizes="24x24"
+      type="img/png"
+      href="assets/favicon/Martz90-Circle-Games.24.png"
+    />
+    <link
+      rel="icon"
+      sizes="32x32"
+      type="img/png"
+      href="assets/favicon/Martz90-Circle-Games.32.png"
+    />
     <title>RPSLS - Game On!</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -29,50 +44,69 @@
         <h1>Rock, Paper, Scissors, Lizard, Spock - Game</h1>
       </header>
       <div class="game-box">
-      <main>
-        <!-- <button class="start-button">Start Game <i class="fa-regular fa-circle-play"></i></button> -->
-        <div id="scoreboard-box">
-        <div id="scoreboard">
-          <h2>Scoreboard</h2>
-          <div id="scores">
-          <div id="scoreboard-user">
-            <p>Your score:</p>
-              <p id="user-score">0</p>
-          </div>
-          <div id="scoreboard-computer">
-              <p>Computer's score</p>
-              <p id="computer-score">0</p>
+        <main>
+          <!-- <button class="start-button">Start Game <i class="fa-regular fa-circle-play"></i></button> -->
+          <div id="scoreboard-box">
+            <div id="scoreboard">
+              <h2>Scoreboard</h2>
+              <div id="scores">
+                <div id="scoreboard-user">
+                  <p>Your score:</p>
+                  <p id="user-score">0</p>
+                </div>
+                <div id="scoreboard-computer">
+                  <p>Computer's score</p>
+                  <p id="computer-score">0</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          <div id="display-choices">
+            <div id="user-box">
+              <div class="display-user-choice-message">
+                <p>display user choice message</p>
+              </div>
+              <div>
+                <p class="display-user-choice">display-user-choice</p>
+              </div>
+            </div>
+
+            <div id="computer-box">
+              <div class="display-computer-choice-message">
+                <p>display computer choice message</p>
+              </div>
+              <div class="display-computer-choice">
+                <p>display computer choice</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 id="outcome">Try your luck!</h3>
+            <p>Pick your poison:</p>
+            <div class="choice-box">
+              <button id="rock" class="choice-button">
+                Rock <i class="fa-regular fa-hand-back-fist"></i>
+              </button>
+
+              <button id="paper" class="choice-button">
+                Paper <i class="fa-regular fa-hand"></i>
+              </button>
+
+              <button id="scissors" class="choice-button">
+                Scissors <i class="fa-regular fa-hand-scissors"></i>
+              </button>
+
+              <button id="lizard" class="choice-button">
+                Lizard <i class="fa-regular fa-hand-lizard"></i>
+              </button>
+
+              <button id="spock" class="choice-button">
+                Spock <i class="fa-regular fa-hand-spock"></i>
+              </button>
+            </div>
+          </div>
+        </main>
       </div>
-        <div>
-          <h3 id="outcome">Try your luck!</h3>
-          <p>Pick your poison:</p>
-          <div class="choice-box ">
-          <button id="rock" class="choice-button">
-            Rock <i class="fa-regular fa-hand-back-fist"></i>
-          </button>
-
-          <button id="paper" class="choice-button">
-            Paper <i class="fa-regular fa-hand"></i>
-          </button>
-
-          <button id="scissors" class="choice-button">
-            Scissors <i class="fa-regular fa-hand-scissors"></i>
-          </button>
-
-          <button id="lizard" class="choice-button">
-            Lizard <i class="fa-regular fa-hand-lizard"></i>
-          </button>
-
-          <button id="spock" class="choice-button">
-            Spock <i class="fa-regular fa-hand-spock"></i>
-          </button>
-        </div>
-        </div>
-      </main>
-    </div>
       <footer>
         <a
           href="https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock"

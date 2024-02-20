@@ -26,6 +26,12 @@ const spockVar = document.getElementById("spock");
 const choiceButtons = (rockVar, paperVar, scissorsVar, lizardVar, spockVar);
 // Outcome variables
 let getOutcome = document.getElementById("outcome");
+let displayUserChoiceMessage = document.querySelector(".display-user-choice-message>p");
+let displayUserChoice = document.querySelector(".display-user-choice>p");
+//displayUserChoice.innerText = displayUserChoice;
+let displayComputerChoiceMessage = document.querySelector(".display-computer-choice-message>p");
+let displayComputerChoice = document.querySelector(".display-computer-choice>p");
+//displayComputerChoice.innerHTML = displayComputerChoice;
 
 //let displayUserChoice = document.getElementById("display-user-choise");
 //let getDisplayComputerChoice = document.getElementById("display-computer-choice");
@@ -95,6 +101,10 @@ function userWins(userChoice, computerChoice) {
     computerChoice +
     ": " +
     winMessage;
+    displayUserChoiceMessage.innerHTML = "Your choice:" + userChoice;
+    displayUserChoice.innerHTML = userChoice;
+    displayComputerChoiceMessage.innerHTML = "Computer's choice:";
+    displayComputerChoice.innerHTML = computerChoice;
 }
 
 function userTies(userChoice, computerChoice) {
@@ -148,7 +158,6 @@ function compareChoices(userChoice) {
     //showResult(loseMessage);
   }
 }
-
 
 //if (userScore === 10) {
 //window.location.assign("end.html")
