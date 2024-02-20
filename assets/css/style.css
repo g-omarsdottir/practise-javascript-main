@@ -6,6 +6,7 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: #060A39;
+  text-align: center;
 }
 
 h1 {
@@ -14,13 +15,6 @@ h1 {
 
 h2 {
   font-size: 1.2rem;
-}
-
-.centered {
-  /*display: flex;
-  flex-direction: column;*/
-  justify-content: center;
-  text-align: center;
 }
 
 .container {
@@ -61,6 +55,11 @@ h1 {
 
 /* Main content */
 
+/* To-do: .game-box {
+  background-color: #E1F933;
+ align-items: center;
+}*/
+
 /* Start Screen */
 
 #list-rules > li {
@@ -89,8 +88,8 @@ h1 {
 /* Scoreboard styles */
 
 .outcome {
-  padding: 1.5rem;
-  margin: 1rem;
+  padding: 20px;
+  margin: 20px auto;
   font-weight: 400;
   font-size: 1.5rem;
 }
@@ -109,7 +108,7 @@ h1 {
   width: fit-content;
   /*border: 6px groove #E1F933;
   border-radius: 3%;
-/* 7B8246*/*/
+/* 7B8246*/
 }
 
 #scores {
@@ -128,8 +127,8 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #E1F933;
-  border: 8px groove #E1F933;
+  background-color: #ecfa7f;
+  border: 8px groove #BA6873;
   border-radius: 3%;
 }
 
@@ -215,7 +214,7 @@ input[type="submit"]:active {
 
 /* Footer styles */
 footer {
-  background-color: #B9C46A;
+  background-image: linear-gradient(to right, rgba(186, 196, 106, 0.795), #F9F5C6, rgba(186, 196, 106, 0.795));
   
   /* 3D effect */
   box-shadow: 0 3px 3px #7B8246 inset;
