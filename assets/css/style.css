@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
+/* Font choosing https://www.helpmegeek.com/geeky-google-fonts-tech-projects/ 
+https://fontsinuse.com/tags/672/video-games*/
 /* General styles */
 
 * {
@@ -7,7 +8,9 @@
   padding: 0;
   box-sizing: border-box;
   /*font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;*/
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    "Lucida Sans", Verdana, sans-serif;*/
+    */
     font-family: "Work Sans", sans-serif;
   color: #060a39;
   text-align: center;

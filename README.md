@@ -84,7 +84,7 @@ ddddd
 ## Bugs
 
 ### Solved Bugs
-const vs. let: because computerChoice is randomly generated and never the same, it should be let and not const.
+const vs. let: because computerChoice is randomly generated and never the same, it should be let and not const. // Not nessecarily true: variable doesn't change, only the value.
 const computerChoice = generateComputerChoice(); changed to let computerChoice = generateComputerChoice();
 
 Forgot to close parenthesis (see below as ### heading). I was stuck on this logic for ages, but glad I didn't give up.

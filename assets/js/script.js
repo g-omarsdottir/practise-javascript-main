@@ -102,6 +102,8 @@ function incrementComputerScore() {
 //if (option === "Rock") return
 //}
 
+// Remember to include bug . see README, Bugs: Forgot to close parenthesis (see below as ### heading)
+
 // Function for when the outcome of comparing the choices is that user wins to increment user's score
 function userWins(userChoice, computerChoice) {
   incrementUserScore();
