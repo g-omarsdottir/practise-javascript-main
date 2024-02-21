@@ -1,28 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 /* General styles */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: #060A39;
+  /*font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;*/
+    font-family: "Work Sans", sans-serif;
+  color: #060a39;
   text-align: center;
 }
 
 h1 {
   font-size: 1.5rem;
+  font-family: "Play", sans-serif;
 }
 
 h2 {
   font-size: 1.2rem;
+  font-family: "Play", sans-serif;
 }
 
+
 .container {
-  background-color: #F9F5C6;
+  background-color: #f9f5c6;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  /* Push footer down */ 
+  /* Push footer down */
   justify-content: space-between;
 }
 
@@ -39,7 +46,7 @@ header a {
 }
 
 .current-page {
-  border-bottom: 1px solid #060A39;
+  border-bottom: 1px solid #060a39;
 }
 
 #navbar {
@@ -148,7 +155,7 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: #ecfa7f;
-  border: 8px groove #BA6873;
+  border: 8px groove #ba6873;
   border-radius: 3%;
 }
 
@@ -163,7 +170,7 @@ h1 {
   align-items: center;
   background-color: #979c645d;
   /*border: 1px solid #060A39;*/
-  border: 8px groove #E1F933;
+  border: 8px groove #e1f933;
   border-radius: 3%;
 }
 
@@ -175,15 +182,18 @@ h1 {
 
 /* Game  buttons styles */
 .choice-button {
-  padding-bottom: 100px;
-  padding-top: 5px;
-  margin: 0.5rem;
-  font-size: 1.5rem;
-  border: 2px solid #060A39;
+  font-family: "Play", sans-serif;
+  border: 2px solid #060a39;
   border-radius: 5%;
-  white-space: nowrap;
   width: 195px;
   height: 100px;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  /*padding-bottom: 100px;*/
+  /*because fixed width+height
+  white-space: nowrap; 
+  padding-top: 5px;
+  */
 }
 
 .choice-button:hover {
@@ -208,16 +218,17 @@ h1 {
 }
 
 #scissors {
-  background: url(../images/Schere-humongus.png) no-repeat center / contain white;
-}
-
-#lizard {
-  background: url(../images/lizard.webp) no-repeat center / contain
+  background: url(../images/Schere-humongus.png) no-repeat center / contain
     white;
 }
 
+#lizard {
+  background: url(../images/lizard.webp) no-repeat center / contain white;
+}
+
 #spock {
-  background: url(../images/spockos-gutos-mirrored.png) no-repeat center / contain white;
+  background: url(../images/spockos-gutos-mirrored.png) no-repeat center /
+    contain white;
 }
 
 input[type="submit"]:hover {
@@ -230,17 +241,19 @@ input[type="submit"]:active {
   font-size: 2.1rem;
 }
 
-
-
 /* Footer styles */
 footer {
-  background-image: linear-gradient(to right, rgba(186, 196, 106, 0.795), #F9F5C6, rgba(186, 196, 106, 0.795));
-  
+  background-image: linear-gradient(
+    to right,
+    rgba(186, 196, 106, 0.795),
+    #f9f5c6,
+    rgba(186, 196, 106, 0.795)
+  );
+
   /* 3D effect */
-  box-shadow: 0 3px 3px #7B8246 inset;
+  box-shadow: 0 3px 3px #7b8246 inset;
   padding: 1%;
 }
-
 
 /* End Screen */
 .return-button {

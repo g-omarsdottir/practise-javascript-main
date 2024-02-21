@@ -8,6 +8,16 @@ let getUsername = document.querySelector(".username-input");
 const winMessage = "You win! Yay!";
 const tieMessage = "It's a tie! Everybody wins!";
 const loseMessage = "Yaiks, that plan backfired! Better luck next time!";
+const rockVsScissors = "Rock crushes Scissors"
+const rockVsLizward = "Rock crushes Lizard"
+const paperVsRock = "Paper covers Rock"
+const paperVsSpock = "Paper disproves Spock"
+const scissorsVsPaper = "Scissors cut Paper"
+const scissorsVsLizard = "Scissors decapitate Lizard"
+const lizardVsSpock = "Lizard poisons Spock"
+const lizardVsPaper = "Lizard eats Paper"
+const spockVsScissors = "Spock smashes Scissors"
+const spockVsRock = "Spock vaporizes Rock"
 
 // Scoreboard variables
 let userScore = 0;
@@ -26,6 +36,8 @@ const spockVar = document.getElementById("spock");
 const choiceButtons = (rockVar, paperVar, scissorsVar, lizardVar, spockVar);
 // Outcome variables
 let getOutcome = document.getElementById("outcome");
+
+//let displayUserChoice = "";
 let displayUserChoiceMessage = document.querySelector(".display-user-choice-message>p");
 let displayUserChoice = document.querySelector(".display-user-choice>p");
 //displayUserChoice.innerText = displayUserChoice;
@@ -101,7 +113,7 @@ function userWins(userChoice, computerChoice) {
     computerChoice +
     ": " +
     winMessage;
-    displayUserChoiceMessage.innerHTML = "Your choice:" + userChoice;
+    displayUserChoiceMessage.innerHTML = "Your choice: " + userChoice;
     displayUserChoice.innerHTML = userChoice;
     displayComputerChoiceMessage.innerHTML = "Computer's choice:";
     displayComputerChoice.innerHTML = computerChoice;
