@@ -1,5 +1,3 @@
-// Was supposed to get rid of error message node js: if (typeof document !== "undefined") {  let element = document.querySelector(".class-name"); }
-
 //Username
 let displayUsername = document.querySelector("test-username-input > span");
 let getUsername = document.querySelector(".username-input");
@@ -37,16 +35,11 @@ const choiceButtons = (rockVar, paperVar, scissorsVar, lizardVar, spockVar);
 // Outcome variables
 let getOutcome = document.getElementById("outcome");
 
-//let displayUserChoice = "";
 let displayUserChoiceMessage = document.querySelector(".display-user-choice-message>p");
 let displayUserChoice = document.querySelector(".display-user-choice>p");
-//displayUserChoice.innerText = displayUserChoice;
+
 let displayComputerChoiceMessage = document.querySelector(".display-computer-choice-message>p");
 let displayComputerChoice = document.querySelector(".display-computer-choice>p");
-//displayComputerChoice.innerHTML = displayComputerChoice;
-
-//let displayUserChoice = document.getElementById("display-user-choise");
-//let getDisplayComputerChoice = document.getElementById("display-computer-choice");
 
 // Event listeners for choice-buttons
 rockVar.addEventListener("click", function () {
@@ -92,15 +85,10 @@ function incrementComputerScore() {
   getComputerScore.innerHTML = computerScore;
 }
 
-// Feedback to user while playing. Replaced by get.Outcome.innerHTML and displayed on browser.
-//function showResult(message) {
-// console.log("Show result: " + message);
-//}
-
-//Function to show actual reason for win/tie/lose
-//function showActualResult(option) {
-//if (option === "Rock") return
-//}
+//function showOutcome (displayUserChoice) {
+  //if (userChoice === "Rock" && computerChoice === "Paper") return
+    //displayUserChoice.innerHTML = rockVsScissors;
+  //}
 
 // Remember to include bug . see README, Bugs: Forgot to close parenthesis (see below as ### heading)
 
@@ -119,6 +107,7 @@ function userWins(userChoice, computerChoice) {
     displayUserChoice.innerHTML = userChoice;
     displayComputerChoiceMessage.innerHTML = "Computer's choice:";
     displayComputerChoice.innerHTML = computerChoice;
+    //showOutcome();
 }
 
 function userTies(userChoice, computerChoice) {
@@ -152,7 +141,6 @@ function compareChoices(userChoice) {
   //console.log("Computer's choice: " + computerChoice);
   if (userChoice === computerChoice) {
     userTies(userChoice, computerChoice);
-    //showResult(tieMessage);
   } else if (
     (userChoice === "Rock" &&
       (computerChoice === "Scissors" || computerChoice === "Lizard")) ||
@@ -166,17 +154,8 @@ function compareChoices(userChoice) {
       (computerChoice === "Scissors" || computerChoice === "Rock"))
   ) {
     userWins(userChoice, computerChoice);
-    //showResult(winMessage);
+    //showOutcome();
   } else {
     userLoses(userChoice, computerChoice);
-    //showResult(loseMessage);
   }
 }
-
-//if (userScore === 10) {
-//window.location.assign("end.html")
-//}
-
-//while (userScore < 11) {
-//compareChoices();
-//}
