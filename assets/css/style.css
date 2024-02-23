@@ -148,38 +148,40 @@ h1 {
 }
 
 #scoreboard-user {
-  padding: 10px;
-  margin: 10px;
-  width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 125px;
   height: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #ecfa7f;
-  border: 8px groove #ba6873;
-  border-radius: 3%;
+ /* border: 8px groove #ba6873;
+  border-radius: 3%;*/
 }
 
 #scoreboard-computer {
-  width: 200px;
-  height: 80px;
-  margin: 10px;
-  padding: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 125px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #979c645d;
   /*border: 1px solid #060A39;*/
-  border: 8px groove #e1f933;
-  border-radius: 3%;
+  /*border: 8px groove #e1f933;
+  border-radius: 3%;*/
 }
 
 .choice-box {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* Game  buttons styles */
