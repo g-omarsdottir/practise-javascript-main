@@ -1,6 +1,5 @@
 //Username
 let displayUsername = document.querySelector("test-username-input > span");
-let getUsername = document.querySelector(".username-input");
 
 // Messages for results / user feedback variables
 const winMessage = "You win! Yay!";
@@ -65,13 +64,57 @@ document.getElementById("spock").addEventListener("click", function () {
 });
 
 //to-do
+// Get the username
+
+//Below is https://www.w3schools.com/jsref/prop_text_value.asp
 // Store username
-function storeUsername() {
-  localStorage.setItem(user, value);
-  let displayUsername = localStorage.getItem(getUsername);
-  displayUsername.innerHTML = "This is your username" + getUsername;
-  console.log(getUsername);
+
+/*Consistency: Using addEventListener consistently throughout your code ensures a more consistent and predictable approach to event handling.
+
+Browser Compatibility: While onclick is widely supported, addEventListener has broader compatibility across modern browsers.
+*/
+
+// Cache element references for performance
+const usernameInput = document.getElementById("username");
+const collectedUsernameElement = document.getElementById("collected-username"); 
+
+// Function to display collected username and handle storage
+function displayUsername() {
+const username = usernameInput.value;
+
+localStorage.setItem(username, usernameInput.value); // To store the username in local storage
+collectedUsernameElement.innerHTML = localStorage.getItem(username); // To display username in DOM in html element with id="collected-username"
 }
+
+// Event listener when user clicks submit username
+document.getElementById("submit").addEventListener("click", function () {
+  if (usernameInput.value.length > 10) {
+    alert("A bit over the top, don't you think? Try again and use less than 10 characters."); // less than 1 character is handled by required in the html input field for username.
+    return false; // to prevent submission if invalid
+  } 
+
+  collectUsername();
+});
+
+// Function to collect and display username after validation
+function collectUsername() {
+  displayUsername(); // Call displayUsername for final display and storage
+  console.log("Username collected:", usernameInput.value);
+}
+
+
+//function storeUsername(){
+//const username = prompt("Enter Username", "");
+
+
+//username = localStorage.getItem(collectUsername);
+
+//console.log("This is your username" + username);
+//}
+
+//document.querySelector(.enter-game-button).addEventListener("click", function()) {
+// Unhide game buttons
+//}
 
 // done
 function generateComputerChoice() {

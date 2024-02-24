@@ -73,6 +73,9 @@ End screen "thank you [username] ..."
 ## Accessibility 
 
 ## Technology Used
+### Unsure if this is correct here - 
+- local storage of username does not have to be cleared, i.e. removed, because it gets overwritten if/when set again.
+- local storage instead of session storage so that username does not get removed if player wants to play again. There is no data protection sensitivy because it's not a username for login or a password, just a nickname or a pseudoname.
 
 ### Languages Used
 HTML5
