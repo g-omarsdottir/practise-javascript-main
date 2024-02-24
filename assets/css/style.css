@@ -71,7 +71,11 @@ h1 {
 
 /* Start Screen */
 
-#list-rules > li {
+#introduction > p {
+  margin: 20px auto;
+}
+
+#rules li {
   margin-bottom: 20px;
   text-align: left;
   margin-left: 42%;

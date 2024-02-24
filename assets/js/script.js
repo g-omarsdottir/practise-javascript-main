@@ -1,5 +1,5 @@
 //Username
-let displayUsername = document.querySelector("test-username-input > span");
+
 
 // Messages for results / user feedback variables
 const winMessage = "You win! Yay!";
