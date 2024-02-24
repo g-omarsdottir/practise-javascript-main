@@ -63,15 +63,38 @@ document.getElementById("spock").addEventListener("click", function () {
   compareChoices("Spock");
 });
 
-//to-do
-// Get the username
+/*
+document.getElementsByClassName("dropbtn").addEventListener("click", function () {
+  dropdownInformation();
+})
 
-//Below is https://www.w3schools.com/jsref/prop_text_value.asp
-// Store username
+/* Toggle Information buttons on mobile devices 
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown
+https://www.w3schools.com/howto/howto_js_dropdown.asp
 
-/*Consistency: Using addEventListener consistently throughout your code ensures a more consistent and predictable approach to event handling.
 
-Browser Compatibility: While onclick is widely supported, addEventListener has broader compatibility across modern browsers.
+// Toggle Game Introduction and Game Rules,
+function dropdownInformation () {
+  document.getElementsById("introduction").classList.toggle("show");
+  document.getElementById("instructions").classList.toggle("show");
+  document.getElementById("rules").classList.toggle("show");
+}
+
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 */
 
 // Cache element references for performance
@@ -86,6 +109,9 @@ localStorage.setItem(username, usernameInput.value); // To store the username in
 collectedUsernameElement.innerHTML = localStorage.getItem(username); // To display username in DOM in html element with id="collected-username"
 }
 
+/*Consistency: Using addEventListener consistently throughout the code ensures a more consistent and predictable approach to event handling.
+Browser Compatibility: While onclick is widely supported, addEventListener has broader compatibility across modern browsers.
+*/
 // Event listener when user clicks submit username
 document.getElementById("submit").addEventListener("click", function () {
   if (usernameInput.value.length > 10) {
@@ -102,15 +128,6 @@ function collectUsername() {
   console.log("Username collected:", usernameInput.value);
 }
 
-
-//function storeUsername(){
-//const username = prompt("Enter Username", "");
-
-
-//username = localStorage.getItem(collectUsername);
-
-//console.log("This is your username" + username);
-//}
 
 //document.querySelector(.enter-game-button).addEventListener("click", function()) {
 // Unhide game buttons

@@ -87,6 +87,29 @@ h1 {
   margin-right: 10px;
 }
 
+/*
+/* Toggle Information buttons on mobile devices 
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown
+https://www.w3schools.com/howto/howto_js_dropdown.asp
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+   overflow: auto;
+  z-index: 1;
+}
+
+.show {
+  display: block;
+}
+*/
+
 /* Play Game */
 
 /*.start-button {
@@ -191,6 +214,11 @@ h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Game  buttons styles */
