@@ -208,6 +208,7 @@ https://www.w3schools.com/howto/howto_js_dropdown.asp
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  
 }
 
 .box {
@@ -230,6 +231,9 @@ https://www.w3schools.com/howto/howto_js_dropdown.asp
   height: 100px;
   margin: 0.5rem;
   font-size: 1.5rem;
+  display: flex;
+  flex-shrink: 1;
+  justify-content: center; /* to-do*/
   /*padding-bottom: 100px;*/
   /*because fixed width+height
   white-space: nowrap; 
