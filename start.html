@@ -31,6 +31,7 @@
                   <button id="introduction-button" class="dropbtn" type="button"><h3>About this Game</h3></button>
                   
                   <div id="introduction" class="dropdown-content box column">  
+                   
                       <p>The game Rock, Paper, Scissors, Lizard, Spock, often referred to as the RPSLS-Game for short, is based on the old classic <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank"
                       rel="noopener"
                       aria-label="Click here to read more about the origin of the game (opens in a new tab)">"Rock, Paper, Scissors" game</a>, 
@@ -81,24 +82,7 @@
           </div>
         </div>
   </div>
-  <script>
-    document.getElementById("introduction-button").addEventListener("click", function() {
-  //dropdownInformation();
-  const introductionElement = document.getElementById("introduction");
-  introductionElement.classList.toggle("show");
-});
 
-document.getElementById("instructions-button").addEventListener("click", function() {
-  //dropdownInformation();
-  document.getElementById("instructions").classList.toggle("show");
-});
-
-document.getElementById("rules-button").addEventListener("click", function() {
-  //dropdownInformation();
-  document.getElementById("rules").classList.toggle("show");
-  console.log("you clicked rules-button");
-});
-  </script>
   <script src="assets/js/script.js"></script>
   </body>
 </html>
