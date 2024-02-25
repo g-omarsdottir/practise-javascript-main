@@ -24,12 +24,13 @@
             
                 <h2>Welcome to a game of Rock, Paper, Scissors, Lizard, Spock!</h2> 
                 
-                <div class="dropdown box">
+                <div>
                   
                   <!-- Buttons to Toggle to show and hide for mobile version. Hidden in Desktop version -->
-                  <button class="dropbtn box column" type="button"><h3>About this Game</h3></button>
                   
-                  <div id="introduction" class="dropdown-content">  
+                  <button id="introduction-button" class="dropbtn" type="button"><h3>About this Game</h3></button>
+                  
+                  <div id="introduction" class="dropdown-content box column">  
                       <p>The game Rock, Paper, Scissors, Lizard, Spock, often referred to as the RPSLS-Game for short, is based on the old classic <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank"
                       rel="noopener"
                       aria-label="Click here to read more about the origin of the game (opens in a new tab)">"Rock, Paper, Scissors" game</a>, 
@@ -45,10 +46,11 @@
                     </div>
              
             </div>
-            <div class="dropdown box column"> <!-- after applying class column, buttons are column but left aligned -->
-              <button class="dropbtn box column" type="button"><h3>How to Play this Game:</h3></button>
+            <div>
               
-                <div id="instructions" class="dropdown-content">
+              <button id="instructions-button" class="dropbtn" type="button"><h3>How to Play this Game:</h3></button>
+              
+                <div id="instructions" class="dropdown-content dropdown box column">
                   <p>Choose one of the five options, Rock, Paper, Scissors, Lizard, or Spock by clicking on the appropriate button.</p>
                   <p>Simultaniously, the computer's choice will be randomly generated.</p>
                   <p>If you win, 1 point will be added to your score.</p>
@@ -58,9 +60,11 @@
                   <p>Each option can beat or be beaten by two other options based on the game rules.</p>
                 </div>
             </div>
-          <div id="rules" class="dropdown box column">
-            <button class="dropbtn box column" type="button"><h3>Game Rules:</h3></button>
-              <div id="rules" class="dropdown-content box column"">
+          <div>
+            
+            <button id="rules-button" class="dropbtn" type="button"><h3>Game Rules:</h3></button>
+              
+            <div id="rules" class="dropdown-content box column">
                 <ul>
                   <li>Scissors cuts Paper</li>
                   <li>Paper covers Rock</li>
@@ -77,6 +81,24 @@
           </div>
         </div>
   </div>
+  <script>
+    document.getElementById("introduction-button").addEventListener("click", function() {
+  //dropdownInformation();
+  const introductionElement = document.getElementById("introduction");
+  introductionElement.classList.toggle("show");
+});
+
+document.getElementById("instructions-button").addEventListener("click", function() {
+  //dropdownInformation();
+  document.getElementById("instructions").classList.toggle("show");
+});
+
+document.getElementById("rules-button").addEventListener("click", function() {
+  //dropdownInformation();
+  document.getElementById("rules").classList.toggle("show");
+  console.log("you clicked rules-button");
+});
+  </script>
   <script src="assets/js/script.js"></script>
   </body>
 </html>

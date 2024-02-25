@@ -63,24 +63,44 @@ document.getElementById("spock").addEventListener("click", function () {
   compareChoices("Spock");
 });
 
-/*
-document.getElementsByClassName("dropbtn").addEventListener("click", function () {
-  dropdownInformation();
-})
+
+// Event listeners for toggled welcome and information
 
 /* Toggle Information buttons on mobile devices 
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown
-https://www.w3schools.com/howto/howto_js_dropdown.asp
+https://www.w3schools.com/howto/howto_js_dropdown.asp */
 
+//document.getElementsByClassName("dropbtn").addEventListener("click", function () {
+  //dropdownInformation();
+//})
 
+document.getElementById("introduction-button").addEventListener("click", function() {
+  //dropdownInformation();
+  const introductionElement = document.getElementById("introduction");
+  introductionElement.classList.toggle("show");
+});
+
+document.getElementById("instructions-button").addEventListener("click", function() {
+  //dropdownInformation();
+  const instructionsElement = document.getElementById("instructions");
+  instructionsElement.classList.toggle("show");
+});
+
+document.getElementById("rules-button").addEventListener("click", function() {
+  //dropdownInformation();
+  const rulesElement = document.getElementById("rules");
+  rulesElement.classList.toggle("show");
+  console.log("you clicked rules-button");
+});
+/*
 // Toggle Game Introduction and Game Rules,
 function dropdownInformation () {
-  document.getElementsById("introduction").classList.toggle("show");
+  document.getElementById("introduction").classList.toggle("show");
   document.getElementById("instructions").classList.toggle("show");
   document.getElementById("rules").classList.toggle("show");
 }
-
+*/
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
@@ -95,7 +115,7 @@ window.onclick = function(event) {
     }
   }
 }
-*/
+
 
 // Cache element references for performance
 const usernameInput = document.getElementById("username-input"); // Represents the raw input (temporary) value of input element (subject to change as user types). For initial validation of allowed character limit. Is passed as argument to function displayUsername to store and display in DOM.
