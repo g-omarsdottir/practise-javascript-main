@@ -98,15 +98,13 @@ window.onclick = function(event) {
 */
 
 // Cache element references for performance
-const usernameInput = document.getElementById("username");
-const collectedUsernameElement = document.getElementById("collected-username"); 
+const usernameInput = document.getElementById("username-input"); // Represents the raw input (temporary) value of input element (subject to change as user types). For initial validation of allowed character limit. Is passed as argument to function displayUsername to store and display in DOM.
+const username = document.getElementById("username"); // Stores the validated username for function displayUsername.
 
-// Function to display collected username and handle storage
+// Function for DOM display and manage local storage of collected username in DOM.
 function displayUsername() {
-const username = usernameInput.value;
-
 localStorage.setItem(username, usernameInput.value); // To store the username in local storage
-collectedUsernameElement.innerHTML = localStorage.getItem(username); // To display username in DOM in html element with id="collected-username"
+username.innerHTML = localStorage.getItem(username); // To display username in DOM.
 }
 
 /*Consistency: Using addEventListener consistently throughout the code ensures a more consistent and predictable approach to event handling.
@@ -118,16 +116,13 @@ document.getElementById("submit").addEventListener("click", function () {
     alert("A bit over the top, don't you think? Try again and use less than 10 characters."); // less than 1 character is handled by required in the html input field for username.
     return false; // to prevent submission if invalid
   } 
-
   collectUsername();
 });
 
-// Function to collect and display username after validation
+// Function to trigger the DOM display and storage of the validated username
 function collectUsername() {
-  displayUsername(); // Call displayUsername for final display and storage
-  console.log("Username collected:", usernameInput.value);
+  displayUsername(); 
 }
-
 
 //document.querySelector(.enter-game-button).addEventListener("click", function()) {
 // Unhide game buttons
