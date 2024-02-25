@@ -142,7 +142,7 @@ function updateChoiceElements(
   userChoice,
   computerChoice
 ) {
-  userChoiceElement.innerHTML = "Your choice: " + "<br>" + userChoice;
+  userChoiceElement.innerHTML = "Your choice: " + "<br>" + userChoice; //to-do: add <br> to real repo
   computerChoiceElement.innerHTML = "Computer choice: " + "<br>" + computerChoice;
 }
 
