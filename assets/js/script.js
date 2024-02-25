@@ -142,8 +142,8 @@ function updateChoiceElements(
   userChoice,
   computerChoice
 ) {
-  userChoiceElement.innerHTML = "Your choice: " + userChoice;
-  computerChoiceElement.innerHTML = "Computer choice: " + computerChoice;
+  userChoiceElement.innerHTML = "Your choice: " + "<br>" + userChoice;
+  computerChoiceElement.innerHTML = "Computer choice: " + "<br>" + computerChoice;
 }
 
 // done
