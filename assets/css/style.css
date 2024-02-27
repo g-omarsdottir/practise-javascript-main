@@ -26,7 +26,7 @@ h2 {
 }
 
 .container {
-  background-color: #f9f5c6;
+  background-color: hotpink;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -260,7 +260,6 @@ margin: 10px auto;
 
 input[type="submit"]:hover {
   background-color: whitesmoke;
-  font-size: 2rem;
 }
 
 input[type="submit"]:active {

@@ -64,15 +64,14 @@ document.getElementById("spock").addEventListener("click", function () {
 });
 
 // Username
-document.getElementsByClassName
 // Cache element references for performance
 const usernameInput = document.getElementById("username-input"); // Represents the raw input (temporary) value of input element (subject to change as user types). For initial validation of allowed character limit. Is passed as argument to function displayUsername to store and display in DOM.
-const username = document.getElementById("username"); // Stores the validated username for function displayUsername.
+const username = document.getElementById("username-display"); // Stores the validated username for function displayUsername.
 
 // Function for DOM display and manage local storage of collected username in DOM.
 function displayUsername() {
 localStorage.setItem(username, usernameInput.value); // To store the username in local storage
-username.innerHTML = localStorage.getItem(username); // To display username in DOM.
+username.textContent = localStorage.getItem(username); // To display username in DOM.
 }
 
 // Event listener when user clicks submit username
@@ -81,8 +80,11 @@ document.getElementById("submit").addEventListener("click", function () {
     alert("A bit over the top, don't you think? Try again and use less than 10 characters."); // less than 1 character is handled by required in the html input field for username.
     return false; // to prevent submission if invalid
   } 
+  //displayUsername();
+  //localStorage.setItem(username, usernameInput.value); // To store the username in local storage. Username is overwritten when stored in this function for event listeners.
   collectUsername();
 });
+
 
 // Function to trigger the DOM display and storage of the validated username
 function collectUsername() {
@@ -212,3 +214,23 @@ function compareChoices(userChoice) {
     userLoses(userChoice, computerChoice);
   }
 }
+
+if (userScoreElement < 11 || computerScoreElement < 11) {
+console.log("Game is completed" + "" + "Your score: " + userScoreElement);
+}
+
+gameOver = true;
+
+
+/*
+function gameCompletion () {
+  console.log("Game is completed" + "" + "Your score: " + userScore);
+}*/
+
+function stopGame() {
+while (userScoreElement < 11 && computerScoreElement < 11) {
+  compareChoices();
+  console.log("game is still running")
+}
+}
+
