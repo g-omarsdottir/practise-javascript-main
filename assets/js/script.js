@@ -64,7 +64,7 @@ document.getElementById("spock").addEventListener("click", function () {
 });
 
 // Username
-
+document.getElementsByClassName
 // Cache element references for performance
 const usernameInput = document.getElementById("username-input"); // Represents the raw input (temporary) value of input element (subject to change as user types). For initial validation of allowed character limit. Is passed as argument to function displayUsername to store and display in DOM.
 const username = document.getElementById("username"); // Stores the validated username for function displayUsername.
@@ -75,9 +75,6 @@ localStorage.setItem(username, usernameInput.value); // To store the username in
 username.innerHTML = localStorage.getItem(username); // To display username in DOM.
 }
 
-/*Consistency: Using addEventListener consistently throughout the code ensures a more consistent and predictable approach to event handling.
-Browser Compatibility: While onclick is widely supported, addEventListener has broader compatibility across modern browsers.
-*/
 // Event listener when user clicks submit username
 document.getElementById("submit").addEventListener("click", function () {
   if (usernameInput.value.length > 10) {
@@ -136,6 +133,8 @@ function updateScoreElement(element, score) {
 function updateResultElement(resultElement, result) {
   resultElement.innerHTML = result;
 }
+
+/* Function to display  */
 
 //function showOutcome (displayUserChoice) {
 //if (userChoice === "Rock" && computerChoice === "Paper") return
