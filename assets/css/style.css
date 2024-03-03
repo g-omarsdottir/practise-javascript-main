@@ -77,7 +77,7 @@ body {
 .rules-img {
   background-color: url(../images/rules-img.webp) no-repeat center / contain;
   width: 300px;
-
+margin: 40px auto;
 }
 
 #rules-img:active {

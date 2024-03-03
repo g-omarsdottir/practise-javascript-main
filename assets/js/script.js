@@ -60,8 +60,9 @@ document.getElementById("rock").addEventListener("click", function () {
   // Section for collecting username. To-do: place variables with other variables when code successfully completed.
   //Cache element references for performance
   let usernameInput = document.getElementById("username-input"); // Represents the raw input (temporary) value of input element (subject to change as user types). For initial validation of allowed character limit. Is passed as argument to function displayUsername to store and display in DOM.
-  let username = document.getElementById("username"); // Stores the validated username for function displayUsername.
-  username.textContent = localStorage.getItem(username); // To display the most recent stored value of username in DOM. To-do: move in function to display message at game completion.
+let username = localStorage.getItem(usernameInput);  
+//let username = document.getElementById("username"); // Stores the validated username for function displayUsername.
+  //username.textContent = localStorage.getItem(username); // To display the most recent stored value of username in DOM. To-do: move in function to display message at game completion.
 let usernameForm = document.getElementById("username-form"); // done
 
 //done
@@ -70,8 +71,10 @@ let usernameForm = document.getElementById("username-form"); // done
     event.preventDefault();
     if (usernameInput.value.length > 10 || usernameInput.value.length < 1) {
       alert("Please choose a username between 1 and 10 characters.");
+      //clear input field if invalid
+      usernameInput.value = "";
       return false; // to prevent submission if username is invalid (more than 10 characters)
-      // less than 1 character is handled with the required attribute in the html input field for username.
+      // less than 1 character is also handled with the required attribute in the html input field for username.
     } else {
     collectUsername();
     setTimeout(() => {
@@ -101,27 +104,26 @@ function generateComputerChoice() {
 // Functions to increment scores
 function incrementUserScore() {
   userScore++;
-  updateScoreElement(userScoreElement, userScore);
+  handleScores(userScoreElement, userScore);
 }
 
 function incrementComputerScore() {
   computerScore++;
-  updateScoreElement(computerScoreElement, computerScore);
+  handleScores(computerScoreElement, computerScore);
 }
 
 // To-do:
 // Function to update the displayed score in the DOM. Using "element" provides flexibility and concise code, updating both user and computer score at once.
-function updateScoreElement(element, score) {
+function handleScores(element, score) {
   element.innerHTML = score;
   if (score === 10) {
     setTimeout(() => {
-    completedSection.style.display = "block";
-      gameSection.style.display = "none";
-      }, 500);
+      completedGame();
+      //completedSection.style.display = "block";
+      //gameSection.style.display = "none";
+      }, 300);
   }
 }
-
-
 
 // Function to update the displayed user and computer choices in the DOM.
 function updateChoiceElements(userChoiceElement, computerChoiceElement, userChoice, computerChoice) {
@@ -207,20 +209,38 @@ function completedGame() {
     landingSection.style.display = "none";
     gameSection.style.display = "none";
     completedSection.style.display = "block";
-  if (userScoreElement === 10) {
+  if (userScore === 10) {
     finalUserScore.innerHTML = "Your score: " + userScore;
-    finalResultMessage.innerHTML = "Congratulations, " + [username] + ", you win!"
+    finalResultMessage.innerHTML = "Congratulations, " + localStorage.getItem(username) + ", you win!"
   } else {
-    finalScore = "Your score: " + userScore;
-    finalResultMessage = "Too bad, " + [username] + ", you lost this time around." + "<br>" + "Better luck next time!"
+    finalUserScore.innerHTML = "Your score: " + userScore;
+    finalResultMessage.innerHTML = "Too bad, " + localStorage.getItem(username) + ", you lost this time around." + "<br>" + "Better luck next time!"
   }
   console.log("completetGame");
 }
 
-
+let usernameDisplay = localStorage.getItem(username);
 
 
 /*
+With this, the vorletzte Username is displayed:
+
+function completedGame() {
+    landingSection.style.display = "none";
+    gameSection.style.display = "none";
+    completedSection.style.display = "block";
+  if (userScore === 10) {
+    finalUserScore.innerHTML = "Your score: " + userScore;
+    finalResultMessage.innerHTML = "Congratulations, " + usernameDisplay + ", you win!"
+  } else {
+    finalUserScore.innerHTML = "Your score: " + userScore;
+    finalResultMessage.innerHTML = "Too bad, " + usernameDisplay + ", you lost this time around." + "<br>" + "Better luck next time!"
+  }
+  console.log("completetGame");
+}
+
+let usernameDisplay = localStorage.getItem(username);
+ 
 
 function updateFinalResultElement 
 
