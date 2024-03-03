@@ -1,236 +1,234 @@
-//Username
+// Game variables array, possible choices for playing game
+const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+// Variables for user feedback to game status to improve UX.
+// Apply method (document.getElementByID) to retrieve references for elements from the DOM 
+//  for functions to update the displayed variables in the DOM.
+// Using let because the choices and results are dynamic.
+let userChoiceElement = document.getElementById("user-choice");
+let computerChoiceElement = document.getElementById("computer-choice");
+let resultElement = document.getElementById("result");
+// Detailled result feedback referencing game rules. Constant variable because game rules are unchangeable.
+const winConditions = {
+  Rock: { Scissors: "crushes", Lizard: "crushes" },
+  Paper: { Rock: "covers", Spock: "disproves" },
+  Scissors: { Paper: "cuts", Lizard: "decapitates" },
+  Lizard: { Spock: "poisons", Paper: "eats" },
+  Spock: { Scissors: "smashes", Rock: "vaporizes" }
+};
 
-
-// Messages for results / user feedback variables
-const winMessage = "You win! Yay!";
-const tieMessage = "It's a tie! Everybody wins!";
-const loseMessage = "Yaiks, that plan backfired! Better luck next time!";
-const rockVsScissors = "Rock crushes Scissors";
-const rockVsLizward = "Rock crushes Lizard";
-const paperVsRock = "Paper covers Rock";
-const paperVsSpock = "Paper disproves Spock";
-const scissorsVsPaper = "Scissors cut Paper";
-const scissorsVsLizard = "Scissors decapitate Lizard";
-const lizardVsSpock = "Lizard poisons Spock";
-const lizardVsPaper = "Lizard eats Paper";
-const spockVsScissors = "Spock smashes Scissors";
-const spockVsRock = "Spock vaporizes Rock";
-
-//done
-// Scoreboard variables
+// Scoreboard variables for functions to increment scores and display updated scores in the DOM
+// Default scores at game start are 0
 let userScore = 0;
 let userScoreElement = document.getElementById("user-score");
 let computerScore = 0;
 let computerScoreElement = document.getElementById("computer-score");
+ 
+// Flow of the game: variables for displaying or hiding sections according to logical flow of the game.
+let landingSection = document.getElementById("landing-section");
+let gameSection = document.getElementById("game-section");
+let completedSection = document.getElementById("completed-section");
 
-//done
-// Choice-buttons variables
-const choicesArray = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+// Display landing page, hide game section and game completed section as default. Use JavaScript to handle both hiding and displaying for better overview. 
+gameSection.style.display = "none";
+completedSection.style.display = "none";
 
-// Outcome variables
-let getOutcome = document.getElementById("outcome");
-
-//done
-// Variables for user feedback to game status for improved UX.
-// Apply method (document.getElementByID) to retrieve references for elements from the DOM
-//  for functions to display the updated choices and results in the DOM.
-// Using let because  choices and results are dynamic.
-let userChoiceElement = document.getElementById("user-choice");
-let computerChoiceElement = document.getElementById("computer-choice");
-let resultElement = document.getElementById("result");
-// done
-// Event listeners for choice-buttons - a method to retrieve references for button elements from the DOM (document.getElementByID) and
-//  add button references to event listener method (addEventListeners).
-//When buttons are clicked, the function compareChoices, the game logic, is called.
-//The string for each choice button from the array choices is passed as an argument to the function compareChoices.
+// Event listeners for choice-buttons - a method to retrieve references for button elements from the DOM (document.getElementByID) and 
+//  add button references to event listener method (addEventListeners). 
+// When buttons are clicked, the function compareChoices, the game logic, is called.
+// The string for each choice button from the array choices is passed as an argument to the function compareChoices.
 document.getElementById("rock").addEventListener("click", function () {
-  compareChoices("Rock");
-});
-// done
-document.getElementById("paper").addEventListener("click", function () {
-  compareChoices("Paper");
-});
-// done
-document.getElementById("scissors").addEventListener("click", function () {
-  compareChoices("Scissors");
-});
-// done
-document.getElementById("lizard").addEventListener("click", function () {
-  compareChoices("Lizard");
-});
-// done
-document.getElementById("spock").addEventListener("click", function () {
-  compareChoices("Spock");
-});
+    compareChoices("Rock");
+  });
+  
+  document.getElementById("paper").addEventListener("click", function () {
+    compareChoices("Paper");
+  });
+  
+  document.getElementById("scissors").addEventListener("click", function () {
+    compareChoices("Scissors");
+  });
+  
+  document.getElementById("lizard").addEventListener("click", function () {
+    compareChoices("Lizard");
+  });
+  
+  document.getElementById("spock").addEventListener("click", function () {
+    compareChoices("Spock");
+  });
 
-// Username
-// Cache element references for performance
-const usernameInput = document.getElementById("username-input"); // Represents the raw input (temporary) value of input element (subject to change as user types). For initial validation of allowed character limit. Is passed as argument to function displayUsername to store and display in DOM.
-const username = document.getElementById("username-display"); // Stores the validated username for function displayUsername.
+  // To-do: placement
+  // Section for collecting username. To-do: place variables with other variables when code successfully completed.
+  //Cache element references for performance
+  let usernameInput = document.getElementById("username-input"); // Represents the raw input (temporary) value of input element (subject to change as user types). For initial validation of allowed character limit. Is passed as argument to function displayUsername to store and display in DOM.
+  let username = document.getElementById("username"); // Stores the validated username for function displayUsername.
+  username.textContent = localStorage.getItem(username); // To display the most recent stored value of username in DOM. To-do: move in function to display message at game completion.
+let usernameForm = document.getElementById("username-form"); // done
+
+//done
+  // Event listener when user clicks button "submit username". To validate username and to trigger the DOM display and storage of the validated username.
+  usernameForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    if (usernameInput.value.length > 10 || usernameInput.value.length < 1) {
+      alert("Please choose a username between 1 and 10 characters.");
+      return false; // to prevent submission if username is invalid (more than 10 characters)
+      // less than 1 character is handled with the required attribute in the html input field for username.
+    } else {
+    collectUsername();
+    setTimeout(() => {
+      playGame();
+    }, 500);
+    }
+  });
 
 // Function for DOM display and manage local storage of collected username in DOM.
-function displayUsername() {
-localStorage.setItem(username, usernameInput.value); // To store the username in local storage
-username.textContent = localStorage.getItem(username); // To display username in DOM.
-}
-
-// Event listener when user clicks submit username
-document.getElementById("submit").addEventListener("click", function () {
-  if (usernameInput.value.length > 10) {
-    alert("A bit over the top, don't you think? Try again and use less than 10 characters."); // less than 1 character is handled by required in the html input field for username.
-    return false; // to prevent submission if invalid
-  } 
-  //displayUsername();
-  //localStorage.setItem(username, usernameInput.value); // To store the username in local storage. Username is overwritten when stored in this function for event listeners.
-  collectUsername();
-});
-
-
-// Function to trigger the DOM display and storage of the validated username
 function collectUsername() {
-  displayUsername(); 
+  localStorage.setItem(username, usernameInput.value); // To store the username in local storage
+  }
+
+
+function playGame(){
+  landingSection.style.display = "none";
+  gameSection.style.display = "block";
+  completedSection.style.display = "none";
+  console.log("play game function activated");
 }
 
-//document.querySelector(.enter-game-button).addEventListener("click", function()) {
-// Unhide game buttons
-//}
-
-// done
+// Generate random computer choice
 function generateComputerChoice() {
-  return choicesArray[Math.floor(Math.random() * choicesArray.length)];
+  return choices[Math.floor(Math.random() * choices.length)];
 }
 
-//done
-// Function to update the displayed user and computer choices in the DOM
-//  to increase UX
-function updateChoiceElements(
-  userChoiceElement,
-  computerChoiceElement,
-  userChoice,
-  computerChoice
-) {
-  userChoiceElement.innerHTML = "Your choice: " + "<br>" + userChoice; //to-do: add <br> to real repo
-  computerChoiceElement.innerHTML = "Computer choice: " + "<br>" + computerChoice;
-}
-
-// done
 // Functions to increment scores
 function incrementUserScore() {
   userScore++;
   updateScoreElement(userScoreElement, userScore);
 }
 
-//done
 function incrementComputerScore() {
   computerScore++;
   updateScoreElement(computerScoreElement, computerScore);
 }
 
-//done
-// Function to display updated scores in the DOM
+// To-do:
+// Function to update the displayed score in the DOM. Using "element" provides flexibility and concise code, updating both user and computer score at once.
 function updateScoreElement(element, score) {
   element.innerHTML = score;
+  if (score === 10) {
+    setTimeout(() => {
+    completedSection.style.display = "block";
+      gameSection.style.display = "none";
+      }, 500);
+  }
 }
 
+
+
+// Function to update the displayed user and computer choices in the DOM.
+function updateChoiceElements(userChoiceElement, computerChoiceElement, userChoice, computerChoice) {
+  userChoiceElement.innerHTML = "Your choice:" + "<br>" + userChoice;
+  computerChoiceElement.innerHTML = "Computer choice:" + "<br>"  + computerChoice;
+}
+
+// Function to update the displayed game result (win, lose, tie) in the DOM.
 function updateResultElement(resultElement, result) {
   resultElement.innerHTML = result;
 }
 
-/* Function to display  */
-
-//function showOutcome (displayUserChoice) {
-//if (userChoice === "Rock" && computerChoice === "Paper") return
-//displayUserChoice.innerHTML = rockVsScissors;
-//}
-
-// Remember to include bug . see README, Bugs: Forgot to close parenthesis (see below as ### heading)
-
-// Function for when the outcome of comparing the choices is that user wins to increment user's score
+// Functions for actions depending on results of compareChoices
 function userWins(userChoice, computerChoice) {
-  incrementUserScore();
-  updateResultElement(result, winMessage);
-  getOutcome.innerHTML =
-    "Your choice: " +
-    userChoice +
-    " beats " +
-    "Computer's choice: " +
-    computerChoice +
-    ": " +
-    winMessage;
+  incrementUserScore();  
+  const reason = winConditions[userChoice][computerChoice]; 
+  const resultMessageWins = userChoice + " " + reason + " " + computerChoice + "!" + "<br>" + " You win!" ;
+  updateResultElement(result, resultMessageWins);
 }
 
 function userTies(userChoice, computerChoice) {
-  updateResultElement(result, tieMessage);
-  getOutcome.innerHTML =
-    "Your choice: " +
-    userChoice +
-    " vs. " +
-    "Computer's choice: " +
-    computerChoice +
-    ": " +
-    tieMessage;
+  const resultMessageTies = userChoice + " " + "equals" + " " + computerChoice + "!" + "<br>" + "It's a tie! Everybody wins!"
+  updateResultElement(result, resultMessageTies);
 }
 
 function userLoses(userChoice, computerChoice) {
-  incrementComputerScore();
-  updateResultElement(result, loseMessage);
-  getOutcome.innerHTML =
-    "Your choice: " +
-    userChoice +
-    " vs. " +
-    "Computer's choice: " +
-    computerChoice +
-    ": " +
-    loseMessage;
+    incrementComputerScore();
+    const reason = winConditions[computerChoice][userChoice]; // Note the switched order
+    const resultMessageLoses = computerChoice + " " + reason + " " + userChoice + "!" + "<br>" + " You lose!";
+    updateResultElement(result, resultMessageLoses);
 }
 
-//done
-// Compare choices: deciding which choice wins
+// Function to compare choices based on game rules
 function compareChoices(userChoice) {
-  // Randomly generated computer's choice
   let computerChoice = generateComputerChoice();
-  updateChoiceElements(
-    userChoiceElement,
-    computerChoiceElement,
-    userChoice,
-    computerChoice
-  );
-  if (userChoice === computerChoice) {
-    userTies(userChoice, computerChoice);
-  } else if (
-    (userChoice === "Rock" &&
-      (computerChoice === "Scissors" || computerChoice === "Lizard")) ||
-    (userChoice === "Paper" &&
-      (computerChoice === "Rock" || computerChoice === "Spock")) ||
-    (userChoice === "Scissors" &&
-      (computerChoice === "Paper" || computerChoice === "Lizard")) ||
-    (userChoice === "Lizard" &&
-      (computerChoice === "Paper" || computerChoice === "Spock")) ||
-    (userChoice === "Spock" &&
-      (computerChoice === "Scissors" || computerChoice === "Rock"))
-  ) {
-    userWins(userChoice, computerChoice);
-  } else {
-    userLoses(userChoice, computerChoice);
+  updateChoiceElements(userChoiceElement, computerChoiceElement, userChoice, computerChoice);
+    if (userChoice === computerChoice) {
+        userTies(userChoice, computerChoice);
+    } else if (
+      (userChoice === "Rock" &&
+        (computerChoice === "Scissors" || computerChoice === "Lizard")) ||
+      (userChoice === "Paper" &&
+        (computerChoice === "Rock" || computerChoice === "Spock")) ||
+      (userChoice === "Scissors" &&
+        (computerChoice === "Paper" || computerChoice === "Lizard")) ||
+      (userChoice === "Lizard" &&
+        (computerChoice === "Paper" || computerChoice === "Spock")) ||
+      (userChoice === "Spock" &&
+        (computerChoice === "Scissors" || computerChoice === "Rock"))
+    ) {
+  userWins(userChoice, computerChoice);
+    } else {
+        userLoses(userChoice, computerChoice);
   }
 }
 
-if (userScoreElement < 11 || computerScoreElement < 11) {
-console.log("Game is completed" + "" + "Your score: " + userScoreElement);
+
+
+function resetGame() {
+  // Scores and display of scores in the DOM
+  userScore = 0;
+  computerScore = 0;
+  computerScoreElement.innerHTML = 0;
+  userScoreElement.innerHTML = 0;
+  // Display of choices and game results of each round in the DOM
+  userChoiceElement.innerHTML = "";
+  computerChoiceElement.innerHTML = "";
+  resultElement.innerHTML = "";
+  gameSection.style.display = "none";
 }
 
-gameOver = true;
+ // Event listener for play again button - seems to be working
+  document.getElementById("play-again").addEventListener("click", function () {
+    resetGame();
+     playGame();  
+    });
+
+// To-do
+let finalResultMessage = document.getElementById("final-result");
+let finalUserScore = document.getElementById("final-score");
+
+function completedGame() {
+    landingSection.style.display = "none";
+    gameSection.style.display = "none";
+    completedSection.style.display = "block";
+  if (userScoreElement === 10) {
+    finalUserScore.innerHTML = "Your score: " + userScore;
+    finalResultMessage.innerHTML = "Congratulations, " + [username] + ", you win!"
+  } else {
+    finalScore = "Your score: " + userScore;
+    finalResultMessage = "Too bad, " + [username] + ", you lost this time around." + "<br>" + "Better luck next time!"
+  }
+  console.log("completetGame");
+}
+
+
 
 
 /*
-function gameCompletion () {
-  console.log("Game is completed" + "" + "Your score: " + userScore);
-}*/
 
-function stopGame() {
-while (userScoreElement < 11 && computerScoreElement < 11) {
-  compareChoices();
-  console.log("game is still running")
+function updateFinalResultElement 
+
+function updateResultElement(resultElement, result) {
+  resultElement.innerHTML = result;
 }
-}
+let resultElement = document.getElementById("result");
+
+*/
+
 

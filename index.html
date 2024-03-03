@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- To-do: Add meta data to all pages -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Rock, Paper, Scissors, Lizard, Spock" />
-    <meta
-      name="keywords"
-      content="rock, paper, scissors, lizard, spock, big bang theory game, easy game, game, play game"
-    />
-    <meta name="author" content="Gudrun Omarsdottir" />
-    <link
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rock, Paper, Scissors, Lizard, Spock - Online Game">
+    <meta name="keywords"
+        content="rock, paper, scissors, lizard, spock, big bang theory game, easy game, game, play game, online game">
+    <meta name="author" content="Gudrun Omarsdottir">
+    
+<link
       rel="icon"
       sizes="16x16"
       type="img/png"
@@ -28,102 +27,174 @@
       type="img/png"
       href="assets/favicon/Martz90-Circle-Games.32.png"
     />
-    <title>RPSLS - Game On!</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
+
+
+    <title>RPSLS - Game on!</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+        href="assets/favicon/video-game-controller-icon-152-227918.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+        href="assets/favicon/video-game-controller-icon-144-227918.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+        href="assets/favicon/video-game-controller-icon-120-227918.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+        href="assets/favicon/video-game-controller-icon-114-227918.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+        href="assets/favicon/video-game-controller-icon-72-227918.png">
+    <link rel="apple-touch-icon-precomposed" sizes="64x64"
+        href="assets/favicon/video-game-controller-icon-64-227918.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+        href="assets/favicon/video-game-controller-icon-57-227918.png">
+    <link rel="apple-touch-icon-precomposed" sizes="48x48"
+        href="assets/favicon/video-game-controller-icon-48-227918.png">
+    <link rel="apple-touch-icon-precomposed" sizes="24x24"
+        href="assets/favicon/video-game-controller-icon-24-227918.png">
+    <link rel="apple-touch-icon-precomposed" sizes="16x16"
+        href="assets/favicon/video-game-controller-icon-16-227918.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/favicon/video-game-controller-icon-152-227918.png">
+    <link rel="icon" sizes="32x32" href="assets/favicon/video-game-controller-icon-32-227918.png">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
     <div class="container">
-      <header>
-        <nav>
-          <ul id="navbar">
-            <li><a href="start.html">Start Screen</a></li>
-            <li><a href="index.html" class="current-page">Play Game</a></li>
-            <li><a href="end.html">End Screen</a></li>
-          </ul>
-        </nav>
-        <h1>Rock, Paper, Scissors, Lizard, Spock - Game on!</h1>
-      </header>
-      <div>
+        <!-- Header -->
+        <header>
+            <h1>Rock, Paper, Scissors, Lizard, Spock <span>- Game</span></h1>
+        </header>
+
+        <!-- Main content -->
         <main>
-          <!-- <button class="start-button">Start Game <i class="fa-regular fa-circle-play"></i></button> -->
-          <div id="scoreboard-box">
-            <!--<div id="score-box" class="box">-->
-            <div id="scoreboard">
-              <!--Missing-->
-              <h2>Scoreboard:</h2>
-              <div id="scores">
-                <!--Missing-->
-                <div id="scoreboard-user">
-                  <!--<div id="user-score-box">-->
-                  <p>Your Score:</p>
-                  <p id="user-score">0</p>
+            <!-- Landing page section -->
+            <div id="landing-section">
+                <div>
+                    <h2>Welcome to a game of Rock, Paper, Scissors, Lizard, Spock!</h2>
+                    <div>
+                        <!-- Introduction of game -->
+                        <h3>About this Game</h3>
+                        <p>The game Rock, Paper, Scissors, Lizard, Spock, often referred to as the RPSLS-Game for
+                            short, is based on the old classic <a
+                                href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank" rel="noopener"
+                                aria-label="Click here to read more about the origin of the game (opens in a new tab)">"Rock,
+                                Paper, Scissors" game</a>,
+                            but has the twist of two added game variables, a Lizard and Spock.</p>
+                        <p>The RPSLS-Game gained popularity after being played on <a
+                                href="https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock"
+                                target="_blank" rel="noopener"
+                                aria-label="Click here to read more about the game on the TV sitcom Big Bang Theory (opens in a new tab)">the
+                                TV sitcom The Big Bang Theory.</a></p>
+                        <p>You can play this game with friends using hand gestures, or dive right in and play it
+                            here against the computer.</p>
+                    </div>
+<!-- Instructions how to play the game -->
+                    <div>
+                        <h3>How to Play this Game</h3>
+                        <p>Choose one of the five options, Rock, Paper, Scissors, Lizard, or Spock by clicking on
+                            the appropriate button.</p>
+                        <p>Simultaniously, the computer's choice will be randomly generated.</p>
+                        <p>Each option can beat or be beaten by two other options based on the game rules.</p>
+                        <p>If you win, 1 point will be added to your score.</p>
+                        <p>If both players, you and the computer, choose the same variable, it's a tie. Even though everybody wins, you
+                            will not gain a point.</p>
+                        <p>If you lose, don't panic, you will not lose a point.</p>
+                        <p>When either player reaches 10 points on the scoreboard, the ultimate game champion is declared.</p>
+                    </div>
+
+                    <!-- Game rules -->
+                    <div>
+                        <h3>Game Rules</h3>
+                        <div id="rules">
+                        <ul>
+                            <li>Scissors cut Paper</li>
+                            <li>Paper covers Rock</li>
+                            <li>Rock crushes Lizard</li>
+                            <li>Lizard poisons Spock</li>
+                            <li>Spock smashes Scissors</li>
+                            <li>Scissors decapitate Lizard</li>
+                            <li>Lizard eats Paper</li>
+                            <li>Paper disproves Spock</li>
+                            <li>Spock vaporizes Rock</li>
+                            <li>Rock crushes Scissors</li>
+                        </ul>
+                    </div>
+                    <div>
+                    <button class="rules-img"><img src="assets/images/rules-img.webp" alt="illustration of game rules" class="rules-img"></button>
+                    </div>
+                  </div>
                 </div>
-                <div id="scoreboard-computer">
-                  <p>Computer's Score:</p>
-                  <p id="computer-score">0</p>
+                <!-- USERNAME -->
+                <div>
+                    <p id="username">username</p>
                 </div>
-              </div>
+                <div class="box">
+                    <div id="username-box">
+                        <form id="username-form">
+                            <label for="username-input">Username: </label>
+                            <input type="text" placeholder="Enter Username" name="username" id="username-input"
+                                required>
+                            <br>
+                            <button id="submit" type="submit">Submit & <br>Play Game</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </div>
+            <!-- Game section -->
+            <div id="game-section">
+                <!-- Scoreboard displaying user's and computer's score. Scores are updated and updated scores displayed on screen using JavaScript -->
+                <div id="score-box" class="box">
+                    <div id="score-box-user">
+                        <p>Your score:</p>
+                        <p id="user-score">0</p>
+                    </div>
+                    <div id="score-box-computer">
+                        <p>Computer score:</p>
+                        <p id="computer-score">0</p>
+                    </div>
+                </div>
 
-          <div id="display-choices">
-            
-            <!-- id="result-box" -->
-            <div id="user-box">
-              <!-- id="user-choice-box" -->
-              <p id="user-choice">userChoiceElement</p>
+                <!-- Display user and computer choice -->
+                <div id="result-box" class="box">
+                    <div id="result-box-user">
+                        <p id="user-choice">userChoice</p>
+                    </div>
+                    <div id="result-box-computer">
+                        <p id="computer-choice">computerChoice</p>
+                    </div>
+                    <div id="result-box-result">
+                        <p id="result">resultElement</p>
+                    </div>
+                </div>
+
+                <!-- Choice buttons to play game to-do: maybe add hidden text for screenreaders only when javascript game logic completed -->
+                <div class="box button-box">
+                    <button id="rock" class="choice-button"><span>Rock</span> <i
+                            class="fa-regular fa-hand-back-fist"></i></button>
+                    <button id="paper" class="choice-button"><span>Paper</span> <i
+                            class="fa-regular fa-hand"></i></button>
+                    <button id="scissors" class="choice-button"><span>Scissors</span> <i
+                            class="fa-regular fa-hand-scissors"></i></button>
+                    <button id="lizard" class="choice-button"><span>Lizard</span> <i
+                            class="fa-regular fa-hand-lizard"></i></button>
+                    <button id="spock" class="choice-button"><span>Spock</span> <i
+                            class="fa-regular fa-hand-spock"></i></button>
+                </div>
             </div>
-            <!-- added <div id="results"> </div> -->
-            <div id="computer-box">
-              <!-- id="computer-choice-box" -->
-              <p id="computer-choice">computerChoiceElement</p>
+
+            <!-- Game completed section -->
+            <div id="completed-section">
+                <h2>Game completed section</h2>
+                <h2 id="final-score">final-score</h2>
+                <h3 id="final-result">final-result</h3>
+                <div>
+                  <button id="play-again" type="button">Play Again</button>
+                </div>
             </div>
-          </div>
-          <div>
-            <h3 id="outcome">Try your luck!</h3>
-            <p id="result">result</p>
-            <p>Pick your poison / Try your luck:</p>
-            <div class="choice-box">
-              <button id="rock" class="choice-button">
-                Rock <i class="fa-regular fa-hand-back-fist"></i>
-              </button>
-
-              <button id="paper" class="choice-button">
-                Paper <i class="fa-regular fa-hand"></i>
-              </button>
-
-              <button id="scissors" class="choice-button">
-                Scissors <i class="fa-regular fa-hand-scissors"></i>
-              </button>
-
-              <button id="lizard" class="choice-button">
-                Lizard <i class="fa-regular fa-hand-lizard"></i>
-              </button>
-
-              <button id="spock" class="choice-button">
-                Spock <i class="fa-regular fa-hand-spock"></i>
-              </button>
-            </div>
-          </div>
-        </main>
-      </div>
-      <div>
-        <p id="username-display"></p>
-      </div>
-          <div class="box">
-            <div>
-              <form>
-            <label for="username-input" class="enter-game-button">Username: </label>
-            <input type="text" placeholder="Enter Username" name="username" id="username-input" size="20" class="enter-game-button" required>
-            <input type="submit" id="submit" class="enter-game-button" value="Submit username and let the games begin!">
-            </form>
-          </div>
-          </div>
     </div>
+    </main>
+    </div>
+    <script src="https://kit.fontawesome.com/c62380739e.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
-    <script
-      src="https://kit.fontawesome.com/c62380739e.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+</body>
+
 </html>
